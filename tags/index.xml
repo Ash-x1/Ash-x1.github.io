@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on دورة لتعلم أساسيات GIS</title>
-    <link>https://ash-x1.github.io/Ash-x1.github.io/tags/</link>
+    <link>https://ash-x1.github.io/tags/</link>
     <description>Recent content in Tags on دورة لتعلم أساسيات GIS</description>
     <generator>Hugo</generator>
     <language>ar-dz</language>
     <lastBuildDate>Mon, 06 Apr 2026 20:32:17 +0100</lastBuildDate>
-    <atom:link href="https://ash-x1.github.io/Ash-x1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ash-x1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIS</title>
-      <link>https://ash-x1.github.io/Ash-x1.github.io/tags/gis/</link>
+      <link>https://ash-x1.github.io/tags/gis/</link>
       <pubDate>Mon, 06 Apr 2026 20:32:17 +0100</pubDate>
-      <guid>https://ash-x1.github.io/Ash-x1.github.io/tags/gis/</guid>
+      <guid>https://ash-x1.github.io/tags/gis/</guid>
       <description></description>
     </item>
     <item>
       <title>QGIS</title>
-      <link>https://ash-x1.github.io/Ash-x1.github.io/tags/qgis/</link>
+      <link>https://ash-x1.github.io/tags/qgis/</link>
       <pubDate>Mon, 06 Apr 2026 20:32:17 +0100</pubDate>
-      <guid>https://ash-x1.github.io/Ash-x1.github.io/tags/qgis/</guid>
+      <guid>https://ash-x1.github.io/tags/qgis/</guid>
       <description></description>
     </item>
     <item>
       <title>تعلم</title>
-      <link>https://ash-x1.github.io/Ash-x1.github.io/tags/%D8%AA%D8%B9%D9%84%D9%85/</link>
+      <link>https://ash-x1.github.io/tags/%D8%AA%D8%B9%D9%84%D9%85/</link>
       <pubDate>Mon, 06 Apr 2026 20:32:17 +0100</pubDate>
-      <guid>https://ash-x1.github.io/Ash-x1.github.io/tags/%D8%AA%D8%B9%D9%84%D9%85/</guid>
+      <guid>https://ash-x1.github.io/tags/%D8%AA%D8%B9%D9%84%D9%85/</guid>
       <description></description>
     </item>
     <item>
       <title>جغرافيا</title>
-      <link>https://ash-x1.github.io/Ash-x1.github.io/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7/</link>
+      <link>https://ash-x1.github.io/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7/</link>
       <pubDate>Mon, 06 Apr 2026 20:32:17 +0100</pubDate>
-      <guid>https://ash-x1.github.io/Ash-x1.github.io/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7/</guid>
+      <guid>https://ash-x1.github.io/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7/</guid>
       <description></description>
     </item>
   </channel>
