@@ -2,115 +2,115 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GIS on دورة لتعلم أساسيات GIS</title>
-    <link>https://example.org/tags/gis/</link>
+    <link>https://ash-x1.github.io/tags/gis/</link>
     <description>Recent content in GIS on دورة لتعلم أساسيات GIS</description>
     <generator>Hugo</generator>
     <language>ar-dz</language>
     <lastBuildDate>Mon, 06 Apr 2026 20:32:17 +0100</lastBuildDate>
-    <atom:link href="https://example.org/tags/gis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ash-x1.github.io/tags/gis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2-5/ المشروع النهائي للفصل</title>
-      <link>https://example.org/posts/final_project/</link>
+      <link>https://ash-x1.github.io/posts/final_project/</link>
       <pubDate>Mon, 06 Apr 2026 20:32:17 +0100</pubDate>
-      <guid>https://example.org/posts/final_project/</guid>
+      <guid>https://ash-x1.github.io/posts/final_project/</guid>
       <description>&lt;h1 id=&#34;كلمة-الفصل&#34;&gt;كلمة الفصل:&lt;/h1&gt;&#xA;&lt;p&gt;بما أنك وصلت إلى هنا فهذا يعني أنه قد صار لديك أساس جيد فيها  يخص GIS و QGIS و كذا التعامل مع الخرائط و أساسيات دراسة الخرائط.&#xA;لذا هذا الدرس سيكون مجرد مشروع ختامي تطبق فيه ما تعلمته، قد يوجد أشياء فيما سيتم طلبه منك في هذا الفصل لم نتطرق لها بعمق أو ربما لم ترها بشكل كاف من قبل لكن الآن لديك أساس جيد يمكنك من البحث بسهولة. إعتبر هذا لافصل اختبارا لقدراتك&lt;/p&gt;</description>
     </item>
     <item>
       <title>2-4/ الكارتوغرافيا Cartography</title>
-      <link>https://example.org/posts/cartography/</link>
+      <link>https://ash-x1.github.io/posts/cartography/</link>
       <pubDate>Mon, 06 Apr 2026 20:03:24 +0100</pubDate>
-      <guid>https://example.org/posts/cartography/</guid>
+      <guid>https://ash-x1.github.io/posts/cartography/</guid>
       <description>&lt;h1 id=&#34;1--ماهية-و-معنى-cartography&#34;&gt;1- ماهية و معنى Cartography:&lt;/h1&gt;&#xA;&lt;p&gt;يعتبر علم &lt;strong&gt;فن وصناعة الخرائط (Cartography)&lt;/strong&gt; الجسر النهائي الذي يربط بين البيانات الجغرافية المعقدة وبين العقل البشري؛ فهو العلم والفن والتقنية المختصة بتمثيل الواقع الجغرافي على أسطح ثنائية أو ثلاثية الأبعاد (خرائط ورقية أو رقمية). لا يقتصر الكارتوغرافيا على &amp;ldquo;الرسم&amp;rdquo; فحسب، بل هو عملية اختيار وتلخيص ورمزية للمعلومات المكانية لجعلها قابلة للفهم والاستخدام لاتخاذ قرارات دقيقة.&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-ما-هي-الكارتوغرافيا-بالضبط&#34;&gt;1. ما هي الكارتوغرافيا بالضبط؟&lt;/h3&gt;&#xA;&lt;p&gt;هي عملية تحويل البيانات الخام (الإحداثيات والمساحات والأسماء) إلى لغة بصرية مفهومة. تتضمن هذه العملية عدة خطوات تقنية وفنية:&lt;/p&gt;</description>
     </item>
     <item>
       <title>2-3/ كيفية استخدام Open Street Maps</title>
-      <link>https://example.org/posts/osm/</link>
+      <link>https://ash-x1.github.io/posts/osm/</link>
       <pubDate>Mon, 06 Apr 2026 17:11:25 +0100</pubDate>
-      <guid>https://example.org/posts/osm/</guid>
+      <guid>https://ash-x1.github.io/posts/osm/</guid>
       <description>&lt;h1 id=&#34;1--خرائط-الأساس&#34;&gt;1- خرائط الأساس:&lt;/h1&gt;&#xA;&lt;p&gt;تُعد &lt;strong&gt;خرائط الخلفية (Basemaps)&lt;/strong&gt; وخرائط الشبكة (Web Map Services) الروح البصرية لمشاريع نظم المعلومات الجغرافية في QGIS؛ فهي توفر السياق الجغرافي اللازم لفهم البيانات التي يقوم المستخدم بإضافتها. بدلاً من العمل في مساحة بيضاء فارغة، تتيح هذه الموارد (مثل OpenStreetMap، Google Maps، و Esri) وضع الطبقات الخاصة بك فوق خريطة واقعية ومحدثة للعالم.&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-أهم-الموارد-المتاحة-داخل-qgis&#34;&gt;1. أهم الموارد المتاحة داخل QGIS:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;خرائط OpenStreetMap (OSM):&lt;/strong&gt; هو &amp;ldquo;ويكيبيديا الخرائط&amp;rdquo;، وهو المورد الافتراضي والأكثر توافقاً مع QGIS. يتميز بدقة تفاصيل الشوارع، والمباني، والأسماء المحلية، وهو مفتوح المصدر بالكامل.&lt;/p&gt;</description>
     </item>
     <item>
       <title>2-2-1/  استنطاق الخريطة (Identify &amp; Selection)</title>
-      <link>https://example.org/posts/identify_selection/</link>
+      <link>https://ash-x1.github.io/posts/identify_selection/</link>
       <pubDate>Mon, 06 Apr 2026 10:37:03 +0100</pubDate>
-      <guid>https://example.org/posts/identify_selection/</guid>
+      <guid>https://ash-x1.github.io/posts/identify_selection/</guid>
       <description>&lt;h1 id=&#34;1--تعريف-ماهية-استنطاق-الخريطة-identify--selection&#34;&gt;1- تعريف ماهية استنطاق الخريطة (Identify &amp;amp; Selection):&lt;/h1&gt;&#xA;&lt;p&gt;تعتبر أدوات &lt;strong&gt;الاستعلام (Identify)&lt;/strong&gt; و&lt;strong&gt;التحديد (Selection)&lt;/strong&gt; في برنامج QGIS بمثابة &amp;ldquo;الجسر&amp;rdquo; الذي يربط بين الرسم الهندسي الموجود على الخريطة وبين قواعد البيانات الوصفية المخزنة خلفها؛ فهي الأدوات التي تمنح الجغرافي القدرة على استنطاق الخريطة وتحويلها من مجرد رسومات إلى مصدر للمعلومات والقرارات.&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-أداة-الاستعلام-identify-tool&#34;&gt;1. أداة الاستعلام (Identify Tool)&lt;/h3&gt;&#xA;&lt;p&gt;هي الأداة الأسرع والأكثر مباشرة للحصول على المعلومات. بمجرد النقر على أي معلم (نقطة، خط، أو مضلع) باستخدام هذه الأداة، تفتح لنا نافذة تعرض كافة البيانات المرتبطة بهذا المعلم في &amp;ldquo;جدول الوصفيات&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>2-2/ الرموز و الألوان Symbology</title>
-      <link>https://example.org/posts/symbology/</link>
+      <link>https://ash-x1.github.io/posts/symbology/</link>
       <pubDate>Mon, 06 Apr 2026 09:50:16 +0100</pubDate>
-      <guid>https://example.org/posts/symbology/</guid>
+      <guid>https://ash-x1.github.io/posts/symbology/</guid>
       <description>&lt;h1 id=&#34;1--تعريف-الرموز-و-الألوان-في-qgis-و-أهميتها&#34;&gt;1- تعريف الرموز و الألوان في QGIS و أهميتها:&lt;/h1&gt;&#xA;&lt;p&gt;تُعد &lt;strong&gt;الرموز (Symbology)&lt;/strong&gt; الواجهة البصرية لقواعد البيانات الجغرافية. بدونها، تظل البيانات مجرد نقاط وخطوط صماء على الشاشة. هي العلم والفن الذي يسمح للجغرافي بنقل رسالة محددة عبر الخريطة من خلال التحكم في الخصائص البصرية للمعالم.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-أنواع-الرموز-الأساسية-في-qgis&#34;&gt;1. أنواع الرموز الأساسية في QGIS&lt;/h2&gt;&#xA;&lt;p&gt;يوفر QGIS عدة طرق لتمثيل البيانات بناءً على طبيعة الجدول الوصفي المرتبط بها:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;الرمز المنفرد (Single Symbol):&lt;/strong&gt; هو الخيار الافتراضي، حيث تظهر جميع المعالم في الطبقة بنفس اللون والشكل (مثل تلوين كل مسارات الأنهار باللون الأزرق الموحد). يُستخدم عندما لا يهمنا التمييز بين المعالم داخل الطبقة الواحدة.&lt;/p&gt;</description>
     </item>
     <item>
       <title>2-1-2/ ملفات Shapefile</title>
-      <link>https://example.org/posts/shapefiles/</link>
+      <link>https://ash-x1.github.io/posts/shapefiles/</link>
       <pubDate>Sun, 05 Apr 2026 21:42:28 +0100</pubDate>
-      <guid>https://example.org/posts/shapefiles/</guid>
+      <guid>https://ash-x1.github.io/posts/shapefiles/</guid>
       <description>&lt;h1 id=&#34;مقدمة-الدرس&#34;&gt;مقدمة الدرس:&lt;/h1&gt;&#xA;&lt;p&gt;الهدف من هذا الدرس هو معرفة ماهية Shapefile و ماذا نقصد بها و لماذا نستخدمها في برنامج QGIS ثم المرور إلى تطبيق استخدامها في البرنامج&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;1--ماهية-shapefile&#34;&gt;1- ماهية Shapefile:&lt;/h1&gt;&#xA;&lt;p&gt;يعتبر ملف &lt;strong&gt;الشيب فايل (Shapefile)&lt;/strong&gt; التنسيق الأكثر شهرة واستخداماً في عالم نظم المعلومات الجغرافية، وهو &amp;ldquo;اللغة المشتركة&amp;rdquo; التي تفهمها جميع برامج الـ GIS تقريباً. إليك شرح مفصل لهذا التنسيق وأهميته في برنامج QGIS:&lt;/p&gt;&#xA;&lt;h3 id=&#34;ما-هو-ملف-الشيب-فايل-shapefile&#34;&gt;ما هو ملف الشيب فايل (Shapefile)؟&lt;/h3&gt;&#xA;&lt;p&gt;تنسيق &lt;strong&gt;Shapefile&lt;/strong&gt; هو تنسيق بيانات متجه (Vector) قامت بتطويره شركة ESRI في أوائل التسعينيات. وعلى الرغم من اسمه الذي يوحي بأنه &amp;ldquo;ملف واحد&amp;rdquo;، إلا أنه في الواقع &lt;strong&gt;مجموعة من الملفات&lt;/strong&gt; (لا تقل عن ثلاثة) تعمل معاً لتخزين المعالم الجغرافية (نقطة، خط، أو مضلع) والبيانات الوصفية المرتبطة بها. يتكون هذا التنسيق بشكل أساسي من:&lt;/p&gt;</description>
     </item>
     <item>
       <title>2-1-1/ تثبيت برنامج QGIS</title>
-      <link>https://example.org/posts/install_qgis/</link>
+      <link>https://ash-x1.github.io/posts/install_qgis/</link>
       <pubDate>Sun, 05 Apr 2026 20:49:25 +0100</pubDate>
-      <guid>https://example.org/posts/install_qgis/</guid>
+      <guid>https://ash-x1.github.io/posts/install_qgis/</guid>
       <description>&lt;h1 id=&#34;مقدمة-الفصل&#34;&gt;مقدمة الفصل:&lt;/h1&gt;&#xA;&lt;p&gt;الهدف الأساسي في هذا الفصل هو تثبيت برنامج QGIS و كذا التعرف على واجهته، بينما من الدرس الموالي سيتم البدء بالتعرف على كيفية استخدامه للشيء الأهم ألا وهو &amp;ldquo;تصميم الخرائط&amp;rdquo;&lt;/p&gt;&#xA;&lt;h3 id=&#34;تنويه-من-الآن-فصاعدا-سيصبح-نظام-الدروس-يعتمد-أكثر-على-توجيهك-لروابط-لمقاطع-من-أجل-تغذية-بصرية-أفضل&#34;&gt;تنويه: من الآن فصاعدا سيصبح نظام الدروس يعتمد أكثر على توجيهك لروابط لمقاطع من أجل تغذية بصرية أفضل&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;1--لمحة-و-تعريف-عن-برنامج-qgis&#34;&gt;1- لمحة و تعريف عن برنامج QGIS:&lt;/h1&gt;&#xA;&lt;p&gt;يعتبر برنامج &lt;strong&gt;QGIS&lt;/strong&gt; (المعروف سابقاً بـ Quantum GIS) الأداة الأكثر شهرة وقوة في عالم البرمجيات الحرة ومفتوحة المصدر الخاصة بنظم المعلومات الجغرافية. إليك لمحة تعريفية شاملة عنه:&lt;/p&gt;</description>
     </item>
     <item>
       <title>2- مقدمة إلى الفصل الثاني</title>
-      <link>https://example.org/posts/welcome_to_chapter_2/</link>
+      <link>https://ash-x1.github.io/posts/welcome_to_chapter_2/</link>
       <pubDate>Sun, 05 Apr 2026 15:01:42 +0100</pubDate>
-      <guid>https://example.org/posts/welcome_to_chapter_2/</guid>
+      <guid>https://ash-x1.github.io/posts/welcome_to_chapter_2/</guid>
       <description>&lt;h1 id=&#34;مقدمة&#34;&gt;مقدمة:&lt;/h1&gt;&#xA;&lt;p&gt;طالما أنك وصلت إلى هنا فقد اجتزت تقريبا نصف المسافة، من هذه المرحلة فصاعدا كل ما تبقى هو تطبيق الأساسيات التي تم تعلمها في الفصل السابق على برنامج مثل QGIS و هذا هو الجزء السهل لكن كبداية سنبدأ بعرض خارطة طريق هذا الفصل و كيف سيتم تقسيم الدروسز&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;الوحدة-الأولى-تهيئة-بيئة-العمل&#34;&gt;الوحدة الأولى: تهيئة بيئة العمل&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;الدرس: التثبيت والواجهة:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;تحميل النسخة المستقرة (LTR) وتثبيتها.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;شرح واجهة البرنامج (شريط الأدوات، لوحة الطبقات، المتصفح Browser).&lt;/p&gt;</description>
     </item>
     <item>
       <title>1-6/ إختبار/Quiz</title>
-      <link>https://example.org/posts/quiz/</link>
+      <link>https://ash-x1.github.io/posts/quiz/</link>
       <pubDate>Sun, 05 Apr 2026 11:31:37 +0100</pubDate>
-      <guid>https://example.org/posts/quiz/</guid>
+      <guid>https://ash-x1.github.io/posts/quiz/</guid>
       <description>&lt;h1 id=&#34;تعليمات-أساسية&#34;&gt;تعليمات أساسية:&lt;/h1&gt;&#xA;&lt;h3 id=&#34;هذا-القسم-هدفه-إختبار-معلوماتك-لترى-إن-كان-لديك-أي-نقص-من-ناحية-المعلومات-قد-تحتاج-لمعالجته-قبل-المرور-إلى-الجانب-التطبيقي-لاحقا-تذكر-أنه-إذا-لم-تعرف-إجابة-سؤال-ما-يمكنك-البحث-في-google--يفضل-أن-تتجنب-سؤال-أدوات-الذكاء-الإصطناعي-إلا-إذا-لم-تساعدك-عملية-البحث-في-إيجاد-إجابة-لأن-البحث-في-المصادر-و-قرائتها-هي-أهم-مهارة-لدى-الباحث-الجغرافي-لهذا-السبب-توجد-توثيقات-و-مقالات-بكثرة-على-الإنترنت-هدفها-مساعدة--الجغرافيين-و-المختصين-تذكر-أن-الجغرافي-الجيد-ليس-من-يحفظ-كل-المعلومات-كأنه-يحفظ-كتابا-بل-من-يبحث-و-يطلع-في-المصادر-و-بالممارسة-تتثبت-المعلومات-في-الذاكرة-بشكل-أكثر-كفاءة&#34;&gt;هذا القسم هدفه إختبار معلوماتك، لترى إن كان لديك أي نقص من ناحية المعلومات قد تحتاج لمعالجته قبل المرور إلى الجانب التطبيقي لاحقا، تذكر أنه إذا لم تعرف إجابة سؤال ما يمكنك البحث في Google  (يفضل أن تتجنب سؤال أدوات الذكاء الإصطناعي إلا إذا لم تساعدك عملية البحث في إيجاد إجابة)، لأن البحث في المصادر و قرائتها هي أهم مهارة لدى الباحث الجغرافي لهذا السبب توجد توثيقات و مقالات بكثرة على الإنترنت هدفها مساعدة  الجغرافيين و المختصين. تذكر أن الجغرافي الجيد ليس من يحفظ كل المعلومات كأنه يحفظ كتابا بل من يبحث و يطلع في المصادر و بالممارسة تتثبت المعلومات في الذاكرة بشكل أكثر كفاءة&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;المطلوب&#34;&gt;المطلوب:&lt;/h1&gt;&#xA;&lt;h2 id=&#34;تنبيه-إقرأ-تعليمات-الإختبار-جيدا-و-ستجد-رابط-الإختبار-في-الأسفل-إضغط-عليه-ليأخذك-إلى-صفحة-الإختبار&#34;&gt;تنبيه: إقرأ تعليمات الإختبار جيدا و ستجد رابط الإختبار في الأسفل، إضغط عليه ليأخذك إلى صفحة الإختبار&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1--الإختبار-مكون-من-15-سؤالا-كل-سؤال-يتكون-من-4-إجابات-واحدة-فقط-صحيحة-يوجد-تلميح-تحت-كل-سؤال-لمساعدتك&#34;&gt;1- الإختبار مكون من 15 سؤالا، كل سؤال يتكون من 4 إجابات واحدة فقط صحيحة، يوجد تلميح تحت كل سؤال لمساعدتك&lt;/h3&gt;&#xA;&lt;h3 id=&#34;2--خذ-وقتك-في-الإجابة-و-البحث-إن-استلزم-الأمر-في-النهاية--هدف-الإختبار-تمكينك-من-معرفة-ما-ينقصك-من-معلومات-لتدارك-الأمر-قبل-المرور-إلى-الجانب-التطبيقي&#34;&gt;2- خذ وقتك في الإجابة و البحث إن استلزم الأمر، في النهاية  هدف الإختبار تمكينك من معرفة ما ينقصك من معلومات لتدارك الأمر قبل المرور إلى الجانب التطبيقي&lt;/h3&gt;&#xA;&lt;h3 id=&#34;3--إضغط-هنا-لتذهب-إلى-الإختبار&#34;&gt;3- &lt;a href=&#34;https://gemini.google.com/share/94951d00dfb8&#34;&gt;إضغط هنا لتذهب إلى الإختبار&lt;/a&gt;&lt;/h3&gt;</description>
     </item>
     <item>
       <title>1-5/ الطبقات</title>
-      <link>https://example.org/posts/layers/</link>
+      <link>https://ash-x1.github.io/posts/layers/</link>
       <pubDate>Sat, 04 Apr 2026 23:14:08 +0100</pubDate>
-      <guid>https://example.org/posts/layers/</guid>
+      <guid>https://ash-x1.github.io/posts/layers/</guid>
       <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;هندسة-الطبقات-layers-وتراكب-البيانات-الجغرافية&#34;&gt;هندسة الطبقات (Layers) وتراكب البيانات الجغرافية&lt;/h1&gt;&#xA;&lt;p&gt;تُعد &lt;strong&gt;الطبقات (Layers)&lt;/strong&gt; الحجر الزاوي في نظم المعلومات الجغرافية. بدون هذا المفهوم، لكان الـ GIS مجرد برنامج رسم خرائط جامد. الطبقات هي التي تسمح لنا بتفكيك الواقع المعقد إلى عناصر بسيطة يمكن إدارتها، تحليلها، وعرضها بشكل منطقي.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-المفهوم-التقني-للطبقات-the-layers-concept&#34;&gt;1. المفهوم التقني للطبقات (The Layers Concept)&lt;/h2&gt;&#xA;&lt;p&gt;تخيل أنك تنظر إلى خريطة لمدينة من الأعلى. بدلاً من رؤية كل شيء كصورة واحدة (مثل الصورة الفوتوغرافية)، يقوم الـ GIS بفصل كل &amp;ldquo;نوع&amp;rdquo; من المعالم في شريحة شفافة مستقلة.&lt;/p&gt;</description>
     </item>
     <item>
       <title>1-4/ أنظمة الإحداثيات</title>
-      <link>https://example.org/posts/coordinate_systems/</link>
+      <link>https://ash-x1.github.io/posts/coordinate_systems/</link>
       <pubDate>Sat, 04 Apr 2026 21:58:43 +0100</pubDate>
-      <guid>https://example.org/posts/coordinate_systems/</guid>
+      <guid>https://ash-x1.github.io/posts/coordinate_systems/</guid>
       <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;الهندسة-الرياضية-للأرض-وأنظمة-الإحداثيات-الدليل-الشامل&#34;&gt;الهندسة الرياضية للأرض وأنظمة الإحداثيات (الدليل الشامل)&lt;/h1&gt;&#xA;&lt;p&gt;مرحباً بكم في أحد أهم الدروس الأساسية في نظم المعلومات الجغرافية (GIS). إن فهم كيفية تمثيل الأرض رقمياً ليس مجرد مهارة تقنية، بل هو &amp;ldquo;العلم&amp;rdquo; الذي يضمن صحة ومصداقية أي خريطة تقوم بإنتاجها.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1--مقدمة-لماذا-نحتاج-لأنظمة-الإحداثيات&#34;&gt;1- مقدمة: لماذا نحتاج لأنظمة الإحداثيات؟&lt;/h2&gt;&#xA;&lt;p&gt;الأرض كوكب ثلاثي الأبعاد غير منتظم الشكل، بينما شاشات الكمبيوتر والخرائط الورقية هي أسطح ثنائية الأبعاد مسطحة. عملية التحويل من &amp;ldquo;الواقع الكروي&amp;rdquo; إلى &amp;ldquo;التمثيل المسطح&amp;rdquo; تسمى &lt;strong&gt;إسقاط الخرائط&lt;/strong&gt;، وهي عملية رياضية لا تخلو من التشويه. بدون نظام إحداثيات موحد، لن تتطابق بياناتك الجغرافية، وسوف تظهر الطرق في المحيطات والمباني فوق الجبال!&lt;/p&gt;</description>
     </item>
     <item>
       <title>1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية</title>
-      <link>https://example.org/posts/vector_raster_data/</link>
+      <link>https://ash-x1.github.io/posts/vector_raster_data/</link>
       <pubDate>Sat, 04 Apr 2026 21:10:52 +0100</pubDate>
-      <guid>https://example.org/posts/vector_raster_data/</guid>
+      <guid>https://ash-x1.github.io/posts/vector_raster_data/</guid>
       <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;1--مقدمة-تعريفية-عن-vector-و-raster&#34;&gt;1- مقدمة تعريفية عن Vector و Raster:&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;لغات-التمثيل-الرقمي-vector--raster&#34;&gt;لغات التمثيل الرقمي (Vector &amp;amp; Raster)&lt;/h1&gt;&#xA;&lt;p&gt;بعد أن عرفنا أن البيانات المكانية تحدد &amp;ldquo;أين&amp;rdquo; تقع المعالم، يأتي السؤال الأهم: &lt;strong&gt;كيف نُرسم هذه المعالم داخل الحاسوب؟&lt;/strong&gt; في عالم نظم المعلومات الجغرافية، لا توجد طريقة واحدة لتمثيل الواقع، بل نستخدم &amp;ldquo;لغتين&amp;rdquo; أو نموذجين أساسيين، واختيارك لأحدهما يعتمد على طبيعة الظاهرة التي تدرسها:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-نموذج-المتجهات-vector&#34;&gt;1. نموذج المتجهات (Vector)&lt;/h3&gt;&#xA;&lt;p&gt;تخيل أنك تمسك بمرسمة وتحدد نقاطاً دقيقة على الورقة ثم تصل بينها. هذا هو &amp;ldquo;الفيكتور&amp;rdquo;. هو نموذج يعتمد على &lt;strong&gt;الهندسة الدقيقة&lt;/strong&gt; لتمثيل المعالم التي لها حدود واضحة ومنفصلة، مثل المباني، الطرق، أو حدود الدول. في هذا النموذج، العالم عبارة عن نقاط وخطوط ومساحات.&lt;/p&gt;</description>
     </item>
     <item>
       <title>1-2/ البيانات الوصفية و البيانات المكانية</title>
-      <link>https://example.org/posts/spatial_attribute_data/</link>
+      <link>https://ash-x1.github.io/posts/spatial_attribute_data/</link>
       <pubDate>Sat, 04 Apr 2026 19:35:39 +0100</pubDate>
-      <guid>https://example.org/posts/spatial_attribute_data/</guid>
+      <guid>https://ash-x1.github.io/posts/spatial_attribute_data/</guid>
       <description>&lt;h1 id=&#34;1--تعريف-البيانات-المكانية-و-البيانات-الوصفية&#34;&gt;1- تعريف البيانات المكانية و البيانات الوصفية:&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;فهم-بيانات-الـ-gis-المكانية-والوصفية&#34;&gt;فهم بيانات الـ GIS (المكانية والوصفية)&lt;/h1&gt;&#xA;&lt;p&gt;في هذا الدرس، سننتقل من المفهوم العام لنظم المعلومات الجغرافية إلى المحرك الحقيقي الذي يشغلها. لكي يتمكن الحاسوب من فهم العالم الحقيقي، فإنه يقسم المعلومة الجغرافية إلى نوعين من البيانات يكمل كل منهما الآخر:&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-البيانات-المكانية-spatial-data&#34;&gt;1. البيانات المكانية (Spatial Data)&lt;/h3&gt;&#xA;&lt;p&gt;هي الجانب &amp;ldquo;الهندسي&amp;rdquo; للمعلومة، وهي التي تخبرنا &lt;strong&gt;&amp;ldquo;أين&amp;rdquo;&lt;/strong&gt; يقع المعلم على سطح الأرض.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;يتم تمثيلها من خلال إحداثيات رياضية (X, Y) أو (Latitude, Longitude).&lt;/p&gt;</description>
     </item>
     <item>
       <title>1- تعريف GIS</title>
-      <link>https://example.org/posts/general_gis_basics/</link>
+      <link>https://ash-x1.github.io/posts/general_gis_basics/</link>
       <pubDate>Sat, 04 Apr 2026 19:08:18 +0100</pubDate>
-      <guid>https://example.org/posts/general_gis_basics/</guid>
+      <guid>https://ash-x1.github.io/posts/general_gis_basics/</guid>
       <description>&lt;h1 id=&#34;1--تعريف-gis&#34;&gt;1- تعريف GIS:&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;نظم-المعلومات-الجغرافية-gis-المفهوم-والأهمية&#34;&gt;نظم المعلومات الجغرافية (GIS): المفهوم والأهمية&lt;/h2&gt;&#xA;&lt;p&gt;تُعد &lt;strong&gt;نظم المعلومات الجغرافية (GIS)&lt;/strong&gt; منظومة حاسوبية متكاملة مصممة لإدارة البيانات المكانية والوصفية. وتعتمد هذه التقنية على دورة حياة تبدأ من &lt;strong&gt;جمع البيانات&lt;/strong&gt; وتخزينها، مروراً &lt;strong&gt;بمعالجتها وتحليلها&lt;/strong&gt;، وصولاً إلى &lt;strong&gt;عرضها وتوزيعها&lt;/strong&gt; لدعم اتخاذ القرارات الاستراتيجية.&lt;/p&gt;&#xA;&lt;h3 id=&#34;آليات-العمل-والوظائف&#34;&gt;آليات العمل والوظائف&lt;/h3&gt;&#xA;&lt;p&gt;يعتمد النظام على دمج نوعين من البيانات:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;البيانات المكانية:&lt;/strong&gt; مثل الخرائط، الصور الجوية، والمرئيات الفضائية.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;البيانات الوصفية:&lt;/strong&gt; وتتمثل في الجداول، الأسماء، والإحصائيات المرتبطة بالمواقع.&lt;/p&gt;</description>
     </item>
     <item>
       <title>مقدمة إلى GIS</title>
-      <link>https://example.org/posts/introduction_to_gis/</link>
+      <link>https://ash-x1.github.io/posts/introduction_to_gis/</link>
       <pubDate>Sat, 04 Apr 2026 17:40:04 +0100</pubDate>
-      <guid>https://example.org/posts/introduction_to_gis/</guid>
+      <guid>https://ash-x1.github.io/posts/introduction_to_gis/</guid>
       <description>&lt;p&gt;أهلاً بكم في هذه الدورة المركزة والمصممة خصيصاً لأخذكم من الصفر إلى مرحلة إنتاج خرائط وتحليلات مكانية احترافية. سنعتمد في هذه الرحلة على برنامج &lt;strong&gt;QGIS&lt;/strong&gt; المجاني ومفتوح المصدر.&lt;/p&gt;&#xA;&lt;p&gt;إليكم الخطة التفصيلية للأسابيع الأربعة القادمة:&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-المرحلة-الأولى-فهم-الأساسيات&#34;&gt;🟢 المرحلة الأولى: فهم الأساسيات&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;الهدف:&lt;/strong&gt; بناء قاعدة نظرية صلبة لتمكينك من شرح المفاهيم بثقة.&lt;/p&gt;&#xA;&lt;p&gt;في هذا الأسبوع سنتعرف على:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;ما هو GIS؟&lt;/strong&gt; وكيف يدمج بين الخريطة وقواعد البيانات.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;أنواع البيانات:&lt;/strong&gt; الفرق بين البيانات المكانية (Spatial) والوصفية (Attribute).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;النماذج البيانية:&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;البيانات المتجهة (&lt;strong&gt;Vector&lt;/strong&gt;): النقاط، الخطوط، والمساحات.&lt;/li&gt;&#xA;&lt;li&gt;البيانات النقطية (&lt;strong&gt;Raster&lt;/strong&gt;): الصور الجوية والبيانات الشبكية.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;أنظمة الإحداثيات (CRS):&lt;/strong&gt; كيف نسقط الأرض الكروية على لوحة مسطحة.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;مفهوم الطبقات (Layers):&lt;/strong&gt; كيف تتراكم المعلومات فوق بعضها لتعطي صورة كاملة.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-المرحلة-الثانية-التطبيق-العملي-على-qgis&#34;&gt;🔵 المرحلة الثانية: التطبيق العملي على QGIS&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;الهدف:&lt;/strong&gt; كسر حاجز الخوف من البرنامج وإنتاج خريطتك الأولى.&lt;/p&gt;</description>
     </item>
   </channel>
