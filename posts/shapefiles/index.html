@@ -1,0 +1,265 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>2-1-2/ ملفات Shapefile - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="مقدمة الدرس:
+الهدف من هذا الدرس هو معرفة ماهية Shapefile و ماذا نقصد بها و لماذا نستخدمها في برنامج QGIS ثم المرور إلى تطبيق استخدامها في البرنامج
+
+1- ماهية Shapefile:
+يعتبر ملف الشيب فايل (Shapefile) التنسيق الأكثر شهرة واستخداماً في عالم نظم المعلومات الجغرافية، وهو &ldquo;اللغة المشتركة&rdquo; التي تفهمها جميع برامج الـ GIS تقريباً. إليك شرح مفصل لهذا التنسيق وأهميته في برنامج QGIS:
+ما هو ملف الشيب فايل (Shapefile)؟
+تنسيق Shapefile هو تنسيق بيانات متجه (Vector) قامت بتطويره شركة ESRI في أوائل التسعينيات. وعلى الرغم من اسمه الذي يوحي بأنه &ldquo;ملف واحد&rdquo;، إلا أنه في الواقع مجموعة من الملفات (لا تقل عن ثلاثة) تعمل معاً لتخزين المعالم الجغرافية (نقطة، خط، أو مضلع) والبيانات الوصفية المرتبطة بها. يتكون هذا التنسيق بشكل أساسي من:" />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="2-1-2/ ملفات Shapefile">
+  <meta itemprop="description" content="مقدمة إلى ملفات Shapefile">
+  <meta itemprop="datePublished" content="2026-04-05T21:42:28+01:00">
+  <meta itemprop="dateModified" content="2026-04-05T21:42:28+01:00">
+  <meta itemprop="wordCount" content="665">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/shapefiles/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="2-1-2/ ملفات Shapefile">
+  <meta property="og:description" content="مقدمة إلى ملفات Shapefile">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-05T21:42:28+01:00">
+    <meta property="article:modified_time" content="2026-04-05T21:42:28+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="2-1-2/ ملفات Shapefile">
+  <meta name="twitter:description" content="مقدمة إلى ملفات Shapefile">
+
+  <link rel="canonical" href="https://example.org/posts/shapefiles/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">2-1-2/ ملفات Shapefile</h1><div class="text-xs antialiased opacity-60"><time>05‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="مقدمة-الدرس">مقدمة الدرس:</h1>
+<p>الهدف من هذا الدرس هو معرفة ماهية Shapefile و ماذا نقصد بها و لماذا نستخدمها في برنامج QGIS ثم المرور إلى تطبيق استخدامها في البرنامج</p>
+<hr>
+<h1 id="1--ماهية-shapefile">1- ماهية Shapefile:</h1>
+<p>يعتبر ملف <strong>الشيب فايل (Shapefile)</strong> التنسيق الأكثر شهرة واستخداماً في عالم نظم المعلومات الجغرافية، وهو &ldquo;اللغة المشتركة&rdquo; التي تفهمها جميع برامج الـ GIS تقريباً. إليك شرح مفصل لهذا التنسيق وأهميته في برنامج QGIS:</p>
+<h3 id="ما-هو-ملف-الشيب-فايل-shapefile">ما هو ملف الشيب فايل (Shapefile)؟</h3>
+<p>تنسيق <strong>Shapefile</strong> هو تنسيق بيانات متجه (Vector) قامت بتطويره شركة ESRI في أوائل التسعينيات. وعلى الرغم من اسمه الذي يوحي بأنه &ldquo;ملف واحد&rdquo;، إلا أنه في الواقع <strong>مجموعة من الملفات</strong> (لا تقل عن ثلاثة) تعمل معاً لتخزين المعالم الجغرافية (نقطة، خط، أو مضلع) والبيانات الوصفية المرتبطة بها. يتكون هذا التنسيق بشكل أساسي من:</p>
+<ul>
+<li>
+<p><strong>إمتداد .shp:</strong> الملف الأساسي الذي يحتوي على الإحداثيات الهندسية للمعالم.</p>
+</li>
+<li>
+<p><strong>إمتداد .dbf:</strong> قاعدة البيانات التي تخزن المعلومات الوصفية (مثل الأسماء، الأرقام، والمساحات).</p>
+</li>
+<li>
+<p><strong>إمتداد .shx:</strong> ملف الفهرسة الذي يربط بين الشكل الهندسي وبياناته الوصفية لسرعة البحث.</p>
+</li>
+<li>
+<p><strong>إمتداد .prj:</strong> (اختياري ولكنه ضروري) يخزن معلومات نظام الإحداثيات والإسقاط.</p>
+</li>
+</ul>
+<h3 id="لماذا-نستخدم-الشيب-فايل">لماذا نستخدم الشيب فايل؟</h3>
+<p>نستخدمه لأنه يمثل المعالم المادية في العالم الحقيقي بدقة هندسية عالية. فبدلاً من رؤية الخريطة كصورة جامدة، يسمح لنا الشيب فايل بالتعامل مع كل &ldquo;مبنى&rdquo; أو &ldquo;طريق&rdquo; ككيان مستقل يمكن النقر عليه، تعديل شكله، أو تحديث بياناته. كما أنه التنسيق الافتراضي لتبادل البيانات بين المؤسسات الحكومية والباحثين لسهولة مشاركته وتوافقه مع كافة المنصات.</p>
+<h3 id="فوائد-ومميزات-استخدام-الشيب-فايل-في-qgis">فوائد ومميزات استخدام الشيب فايل في QGIS</h3>
+<p>يمنح QGIS قوة إضافية عند التعامل مع ملفات الشيب فايل من خلال عدة مميزات:</p>
+<ol>
+<li>
+<p><strong>السرعة والخفة:</strong> يتميز الشيب فايل بسرعة العرض (Rendering) داخل واجهة QGIS، مما يسهل العمل على مشاريع تحتوي على آلاف المعالم دون بطء الجهاز.</p>
+</li>
+<li>
+<p><strong>سهولة التحرير (Editing):</strong> يوفر QGIS أدوات متقدمة جداً للتعديل على ملفات الشيب فايل، مثل إضافة نقاط جديدة، تغيير مسار الطرق، أو دمج المضلعات بسهولة تامة.</p>
+</li>
+<li>
+<p><strong>دعم البيانات الوصفية الضخمة:</strong> يمكنك ربط جداول بيانات عملاقة بملف الشيب فايل في QGIS، وإجراء عمليات إحصائية وفلاتر متقدمة على هذه البيانات.</p>
+</li>
+<li>
+<p><strong>التوافق العالي:</strong> نظراً لكونه تنسيقاً قياسياً، يمكنك تصدير بياناتك من QGIS بصيغة الشيب فايل وفتحها في أي برنامج آخر أو حتى رفعها على خرائط الويب (Web GIS) دون فقدان المعلومات.</p>
+</li>
+<li>
+<p><strong>التحكم البصري (Symbology):</strong> يتيح QGIS للمستخدمين إمكانية تلوين ملف الشيب فايل وتصنيفه بناءً على القيم الموجودة في جدول البيانات (مثل تلوين المدن حسب عدد السكان)، مما يسهل عملية التحليل البصري.</p>
+</li>
+</ol>
+<h3 id="نصيحة-تقنية-للمبتدئين">نصيحة تقنية للمبتدئين:</h3>
+<p>عند نقل ملف شيب فايل من مجلد لآخر أو إرساله لأشخاص آخرين، تأكد دائماً من نقل <strong>جميع الملفات</strong> التي تحمل نفس الاسم (بمختلف امتداداتها .shp, .dbf, .shx&hellip;)، لأن فقدان أي منها سيجعل الطبقة غير قابلة للفتح في برنامج QGIS.</p>
+<hr>
+<h1 id="2--كيفية-استخدام-و-إنشاء-ملفات-shapefile-في-برنامج-qgis">2- كيفية استخدام و إنشاء ملفات Shapefile في برنامج QGIS:</h1>
+<h3 id="الآن-و-بعد-أن-صار-لديك-فكرة-عن-ماهية-هذا-النوع-من-الملفات-جاء-الوقت-للبدء-في-التعامل-معها-بشكل-تطبيقي-إذا-كنت-قد-قمت-بتثبيت-برنامج-qgis-في-الدرس-السابق-فهذه-الآن-فرصتك-لبدء-استخدامه-يمكنك-المتابعة-مع-الفيديوهات-و-تقليد-ما-يفعلونه-للتعود-على-استخدام-البرنامج">الآن و بعد أن صار لديك فكرة عن ماهية هذا النوع من الملفات، جاء الوقت للبدء في التعامل معها بشكل تطبيقي. إذا كنت قد قمت بتثبيت برنامج QGIS في الدرس السابق فهذه الآن فرصتك لبدء استخدامه، يمكنك المتابعة مع الفيديوهات و تقليد ما يفعلونه للتعود على استخدام البرنامج</h3>
+<p>1- <a href="https://www.youtube.com/watch?v=LF0cZNYenOg">إضغط هنا لمتابعة المقطع حول كيفية إنشاء ملف shapefile</a></p>
+<p>2- <a href="https://www.youtube.com/watch?v=y5oGSNVDrQA">إضغط هنا لمتابعة مقطع حول كيفية استيراد ملفات shapefile داخل QGIS</a></p>
+<p>3- <a href="https://www.youtube.com/watch?v=G6O8Y_vW6GU">إضغط هنا لمتابعة مقطع حول كيفية تحميل خرائط من مواقع خارجية على شاكلة Shapefile و استخدامها داخل البرنامج</a> &hellip; فقط للتنويه البرنامج المستخدم في الفيديو هو Arcmap لذا لا داعي للتركيز على الواجهة اكثر من التركيز على فكرة كيفية تحميل ملفات shapefile، تنويه مهم أيضا ملفات shapefile عبارة عن طبقات (كل طبقة تمثل جزئا من الخريطة، طبقة مباني، طبقة حدود، طبقة طرقات&hellip;الخ كما شرحنا في الأعلى) لذا دائما حاول استيراد كل ملفات shapefile المرتبطة ببعضها داخل المجلدلا يكفي فقط استيراد طبقة واحدة بمفردها</p>
+<hr>
+<h1 id="3--كيفية-إضافة-البيانات-في-برنامج-qgis">3- كيفية إضافة البيانات في برنامج QGIS:</h1>
+<h3 id="تنويه-هذا-الجزء-هدفه-فقط-زيادة-تثبيت-معلومة-كيفية-اضافة-بيانات-و-ملفات-إلى-برنامج-qgis">تنويه: هذا الجزء هدفه فقط زيادة تثبيت معلومة كيفية اضافة بيانات و ملفات إلى برنامج QGIS</h3>
+<p>1- <a href="https://www.youtube.com/watch?v=BupN07WPem8">إضغط هنا لمتابعة هذا الفيديو الذي مدته دقيقة و نصف لمعرفة الطرق المختلفة لإضافة البيانات في QGIS</a></p>
+<hr>
+<h1 id="خاتمة-الدرس">خاتمة الدرس:</h1>
+<p>الآن من المفترض أنك أكثر اعتيادا على واجهة البرنامج و كيفية التعامل مع المفات و لديك فكرة عن كيف ستكون طريقة عملك مستقبلا، طبعا مازال هناك أشياء أخرى لتعلمها لكن إلى الآن من المفترض أنك أكثر راحة في التعامل مع البرنامج.</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/symbology/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>2-2/ الرموز و الألوان Symbology</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/install_qgis/"
+      ><span>2-1-1/ تثبيت برنامج QGIS</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

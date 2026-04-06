@@ -1,0 +1,343 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>1-4/ أنظمة الإحداثيات - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="
+الهندسة الرياضية للأرض وأنظمة الإحداثيات (الدليل الشامل)
+مرحباً بكم في أحد أهم الدروس الأساسية في نظم المعلومات الجغرافية (GIS). إن فهم كيفية تمثيل الأرض رقمياً ليس مجرد مهارة تقنية، بل هو &ldquo;العلم&rdquo; الذي يضمن صحة ومصداقية أي خريطة تقوم بإنتاجها.
+1- مقدمة: لماذا نحتاج لأنظمة الإحداثيات؟
+الأرض كوكب ثلاثي الأبعاد غير منتظم الشكل، بينما شاشات الكمبيوتر والخرائط الورقية هي أسطح ثنائية الأبعاد مسطحة. عملية التحويل من &ldquo;الواقع الكروي&rdquo; إلى &ldquo;التمثيل المسطح&rdquo; تسمى إسقاط الخرائط، وهي عملية رياضية لا تخلو من التشويه. بدون نظام إحداثيات موحد، لن تتطابق بياناتك الجغرافية، وسوف تظهر الطرق في المحيطات والمباني فوق الجبال!" />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="1-4/ أنظمة الإحداثيات">
+  <meta itemprop="description" content="أنظمة الإحداثيات coordinate systems">
+  <meta itemprop="datePublished" content="2026-04-04T21:58:43+01:00">
+  <meta itemprop="dateModified" content="2026-04-04T21:58:43+01:00">
+  <meta itemprop="wordCount" content="780">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/coordinate_systems/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="1-4/ أنظمة الإحداثيات">
+  <meta property="og:description" content="أنظمة الإحداثيات coordinate systems">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T21:58:43+01:00">
+    <meta property="article:modified_time" content="2026-04-04T21:58:43+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1-4/ أنظمة الإحداثيات">
+  <meta name="twitter:description" content="أنظمة الإحداثيات coordinate systems">
+
+  <link rel="canonical" href="https://example.org/posts/coordinate_systems/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">1-4/ أنظمة الإحداثيات</h1><div class="text-xs antialiased opacity-60"><time>04‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><hr>
+<h1 id="الهندسة-الرياضية-للأرض-وأنظمة-الإحداثيات-الدليل-الشامل">الهندسة الرياضية للأرض وأنظمة الإحداثيات (الدليل الشامل)</h1>
+<p>مرحباً بكم في أحد أهم الدروس الأساسية في نظم المعلومات الجغرافية (GIS). إن فهم كيفية تمثيل الأرض رقمياً ليس مجرد مهارة تقنية، بل هو &ldquo;العلم&rdquo; الذي يضمن صحة ومصداقية أي خريطة تقوم بإنتاجها.</p>
+<h2 id="1--مقدمة-لماذا-نحتاج-لأنظمة-الإحداثيات">1- مقدمة: لماذا نحتاج لأنظمة الإحداثيات؟</h2>
+<p>الأرض كوكب ثلاثي الأبعاد غير منتظم الشكل، بينما شاشات الكمبيوتر والخرائط الورقية هي أسطح ثنائية الأبعاد مسطحة. عملية التحويل من &ldquo;الواقع الكروي&rdquo; إلى &ldquo;التمثيل المسطح&rdquo; تسمى <strong>إسقاط الخرائط</strong>، وهي عملية رياضية لا تخلو من التشويه. بدون نظام إحداثيات موحد، لن تتطابق بياناتك الجغرافية، وسوف تظهر الطرق في المحيطات والمباني فوق الجبال!</p>
+<hr>
+<h2 id="المحور-الأول-علم-الجيوديسيا-وتمثيل-شكل-الأرض-geodesy">المحور الأول: علم الجيوديسيا وتمثيل شكل الأرض (Geodesy)</h2>
+<p>قبل الحديث عن الأرقام والإحداثيات، يجب أن نفهم &ldquo;الحاوية&rdquo; التي توضع فيها هذه الأرقام، وهي كوكب الأرض.</p>
+<h3 id="1-المستويات-الثلاثة-لتمثيل-الأرض">1. المستويات الثلاثة لتمثيل الأرض</h3>
+<p>لا يستخدم العلماء نموذجاً واحداً للأرض، بل ثلاثة نماذج تزداد تعقيداً حسب الحاجة:</p>
+<ul>
+<li>
+<p><strong>الكرة (The Sphere):</strong> هو أبسط تمثيل، يفترض أن الأرض كرة كاملة الاستدارة. يُستخدم فقط في الخرائط ذات المقياس الصغير جداً (مثل الأطالس المدرسية).</p>
+</li>
+<li>
+<p><strong>الإهليلج أو شبه الكرة (The Ellipsoid/Spheroid):</strong> نظراً لدوران الأرض حول محورها، تندفع الكتلة نحو الخارج عند خط الاستواء، مما يسبب انبعاجاً. يتم تعريفه بـ:</p>
+<ul>
+<li>
+<p>نصف القطر الأكبر (<strong>Semi-major axis</strong>) عند خط الاستواء.</p>
+</li>
+<li>
+<p>نصف القطر الأصغر (<strong>Semi-minor axis</strong>) بين القطبين.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>الجيوئيد (The Geoid):</strong> هو الشكل الفيزيائي الحقيقي. هو سطح يمثل &ldquo;متوسط منسوب مياه البحر&rdquo; لو كان ممتداً تحت القارات. هو سطح غير منتظم تماماً بسبب اختلاف قوى الجاذبية الأرضية.</p>
+</li>
+</ul>
+<h3 id="2-المرجع-الجيوديسي-the-datum">2. المرجع الجيوديسي (The Datum)</h3>
+<p>الداتوم هو المكون &ldquo;السحري&rdquo; الذي يربط الإهليلج الرياضي بمكان حقيقي على الأرض. بدون داتوم، الإحداثيات هي مجرد أرقام في الفراغ.</p>
+<ul>
+<li>
+<p><strong>مراجع عالمية (Global Datums):</strong> مثل <strong>WGS 1984</strong>. صُمم ليكون دقيقاً لتمثيل كوكب الأرض ككل (وهو المرجع الذي تعتمد عليه الأقمار الصناعية ونظام GPS).</p>
+</li>
+<li>
+<p><strong>مراجع محلية (Local Datums):</strong> مثل <strong>NAD 1927</strong> أو <strong>ED50</strong>. يتم فيها إزاحة الإهليلج ليتطابق تماماً مع منطقة معينة. توفر دقة قصوى لتلك المنطقة لكنها تسبب أخطاء فادحة خارجها.</p>
+</li>
+</ul>
+<hr>
+<h2 id="المحور-الثاني-أنظمة-الإحداثيات-الجغرافية-gcs">المحور الثاني: أنظمة الإحداثيات الجغرافية (GCS)</h2>
+<p>هذا النظام يتعامل مع الأرض كشكل ثلاثي الأبعاد ويقيس المواقع باستخدام <strong>الزوايا</strong>.</p>
+<h3 id="1-خطوط-الطول-ودوائر-العرض">1. خطوط الطول ودوائر العرض</h3>
+<ul>
+<li>
+<p><strong>دوائر العرض (Latitude):</strong> دوائر متوازية تقيس الزاوية شمال وجنوب خط الاستواء <code> 0° إلى  90°</code></p>
+</li>
+<li>
+<p><strong>خطوط الطول (Longitude):</strong> خطوط تصل بين القطبين وتقيس الزاوية شرق وغرب خط غرينتش <code> 0° إلى  180°</code></p>
+</li>
+</ul>
+<h3 id="2-وحدات-القياس-الزاوية">2. وحدات القياس الزاوية</h3>
+<p>يتم التعبير عنها بصيغتين:</p>
+<ul>
+<li>
+<p><strong>الدرجات العشرية (Decimal Degrees - DD):</strong> مثل <code>35.6942</code> (المفضلة برمجياً).</p>
+</li>
+<li>
+<p><strong>الدرجات والدقائق والثواني (DMS):</strong> مثل <code>35° 41' 39&quot; N</code>.</p>
+</li>
+</ul>
+<h3 id="3-العيب-الجوهري-في-gcs">3. العيب الجوهري في GCS</h3>
+<p>المسافة الأرضية للدرجة الواحدة من خط الطول ليست ثابتة؛ فهي تتناقص كلما اتجهنا نحو القطبين. لذلك، <strong>لا يمكننا حساب المساحات أو المسافات بدقة</strong> باستخدام هذا النظام.</p>
+<hr>
+<h2 id="المحور-الثالث-إسقاط-الخرائط-map-projections">المحور الثالث: إسقاط الخرائط (Map Projections)</h2>
+<p>الإسقاط هو عملية تحويل الإحداثيات من السطح المنحني إلى السطح المستوي.</p>
+<h3 id="1-أنواع-أسطح-الإسقاط-projection-surfaces">1. أنواع أسطح الإسقاط (Projection Surfaces)</h3>
+<ul>
+<li>
+<p><strong>الأسطواني (Cylindrical):</strong> لف الورقة حول الأرض كالأسطوانة (مثال: مركيتور). يلامس خط الاستواء وتزداد التشوهات عند الأقطاب.</p>
+</li>
+<li>
+<p><strong>المخروطي (Conic):</strong> وضع الورقة كقبعة مخروطية. مثالي للدول ذات الامتداد العرضي.</p>
+</li>
+<li>
+<p><strong>المستوي (Planar):</strong> يلامس الأرض في نقطة واحدة (غالباً القطب).</p>
+</li>
+</ul>
+<h3 id="2-قانون-الحفاظ-على-الخصائص-التشويه">2. قانون الحفاظ على الخصائص (التشويه)</h3>
+<p>كل مسقط يضحي بخاصية ليصدق في أخرى:</p>
+<ul>
+<li>
+<p><strong>المساقط المتساوية المساحات (Equal-Area):</strong> تحافظ على المساحة لكنها تشوه الأشكال.</p>
+</li>
+<li>
+<p><strong>المساقط المتساوية الزوايا (Conformal):</strong> تحافظ على الأشكال والاتجاهات (للملاحة) لكنها تضخم المساحات عند الأقطاب.</p>
+</li>
+<li>
+<p><strong>المساقط المتساوية المسافات (Equidistant):</strong> تحافظ على المسافات من مركز معين فقط.</p>
+</li>
+</ul>
+<hr>
+<h2 id="المحور-الرابع-أنظمة-الإحداثيات-المسقطة-pcs">المحور الرابع: أنظمة الإحداثيات المسقطة (PCS)</h2>
+<p>هذا هو النظام العملي في الـ GIS لأن وحداته هي <strong>الأمتار</strong>.</p>
+<h3 id="1-نظام-utm-universal-transverse-mercator">1. نظام UTM (Universal Transverse Mercator)</h3>
+<p>النظام الأكثر شيوعاً. يقسم العالم إلى <strong>60 نطاقاً (Zones)</strong> عمودياً:</p>
+<ul>
+<li>
+<p>كل &ldquo;زون&rdquo; يغطي $6^\circ$ طولية.</p>
+</li>
+<li>
+<p>داخل كل زون، يتم تطبيق إسقاط يجعل القياسات دقيقة جداً.</p>
+</li>
+<li>
+<p>الوحدات المستخدمة هي الأمتار (<strong>Easting</strong> و <strong>Northing</strong>).</p>
+</li>
+</ul>
+<h3 id="2-أنظمة-الإحداثيات-المحلية">2. أنظمة الإحداثيات المحلية</h3>
+<p>تستخدم الدول أنظمة خاصة لزيادة الدقة المحلية (مثل نظام &ldquo;نورد دو ماروك&rdquo; أو الأنظمة الوطنية في مصر والسعودية).</p>
+<hr>
+<h2 id="المحور-الخامس-التعامل-التقني-مع-الإحداثيات">المحور الخامس: التعامل التقني مع الإحداثيات</h2>
+<h3 id="1-الفرق-بين-define-projection-و-project-tool">1. الفرق بين Define Projection و Project Tool</h3>
+<ul>
+<li>
+<p><strong>Define Projection:</strong> نستخدمه عندما يكون الملف &ldquo;مجهول الهوية&rdquo;. نحن فقط نعرّف البرنامج باسم النظام (لا تتغير البيانات).</p>
+</li>
+<li>
+<p><strong>Project Tool:</strong> نستخدمه لتحويل البيانات فعلياً من نظام لآخر (تتم إعادة حساب الإحداثيات لكل نقطة).</p>
+</li>
+</ul>
+<h3 id="2-الإسقاط-الفوري-on-the-fly-projection">2. الإسقاط الفوري (On-the-Fly Projection)</h3>
+<p>ميزة في البرامج تعرض طبقات من أنظمة مختلفة فوق بعضها بصرياً. <strong>تنبيه:</strong> هذا العرض صوري فقط؛ للتحليل المكاني (حساب مساحات)، يجب توحيد النظام فعلياً لكافة الطبقات.</p>
+<h3 id="3-قاعدة-جغرافية-ذهبية">3. قاعدة جغرافية ذهبية</h3>
+<ul>
+<li>
+<p><strong>رسم خريطة للعالم أو ملاحة GPS:</strong> استخدم <strong>GCS (WGS84)</strong>.</p>
+</li>
+<li>
+<p><strong>حساب مساحة، طول، أو مسافة:</strong> استخدم <strong>PCS (UTM)</strong> المناسب للمنطقة.</p>
+</li>
+</ul>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<h3 id="1--إطلع-على-محتوى-الفيديو-الاحداثيات-الجغرافية-بشكل-مبسط--coordinate-system-من-أجل-فهم-أولي-لمعنى-و-فائدة-الإحداثيات-الجغرافية-و-أنظمة-الإحداثيات">1- إطلع على محتوى الفيديو <a href="https://www.youtube.com/watch?v=UW3ZJ7dQ1sM">الاحداثيات الجغرافية بشكل مبسط | Coordinate System</a> من أجل فهم أولي لمعنى و فائدة الإحداثيات الجغرافية و أنظمة الإحداثيات</h3>
+<h3 id="2--إطلع-على-محتوى-الفصل-09-من-مقال-introduction-to-gis--coordinate-systems-لمزيد-من-التفاصيل-و-كذا-التغذية-البصرية-بالأمثلة">2- إطلع على محتوى الفصل 09 من مقال <a href="https://mgimond.github.io/Spatial/chp09_0.html">introduction to gis- Coordinate systems</a> لمزيد من التفاصيل و كذا التغذية البصرية بالأمثلة</h3>
+<h3 id="3--إطلع-على-المقال-coordinate-systems-map-projections-and-transformations-من-موقع-arcgis-لمعلومات-إضافية-حول-الموضوع">3- إطلع على المقال <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/coordinate-systems-and-projections.htm">Coordinate systems, map projections, and transformations</a> من موقع arcgis لمعلومات إضافية حول الموضوع</h3>
+<h3 id="4--إطلع-على-الإجابة-في-التعليق-الأول-من-المستخدم-swordsmuscleswizards-هذا-السؤال-في-موقع-reddit">4- إطلع على الإجابة في التعليق الأول من المستخدم &lsquo;SwordsMusclesWizards&rsquo; هذا <a href="https://www.reddit.com/r/gis/comments/14kj5zn/new_to_gis_and_struggling_to_understand/">السؤال في موقع Reddit</a></h3>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/layers/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>1-5/ الطبقات</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/vector_raster_data/"
+      ><span>1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>2-3/ كيفية استخدام Open Street Maps - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1- خرائط الأساس:
+تُعد خرائط الخلفية (Basemaps) وخرائط الشبكة (Web Map Services) الروح البصرية لمشاريع نظم المعلومات الجغرافية في QGIS؛ فهي توفر السياق الجغرافي اللازم لفهم البيانات التي يقوم المستخدم بإضافتها. بدلاً من العمل في مساحة بيضاء فارغة، تتيح هذه الموارد (مثل OpenStreetMap، Google Maps، و Esri) وضع الطبقات الخاصة بك فوق خريطة واقعية ومحدثة للعالم.
+1. أهم الموارد المتاحة داخل QGIS:
+
+
+خرائط OpenStreetMap (OSM): هو &ldquo;ويكيبيديا الخرائط&rdquo;، وهو المورد الافتراضي والأكثر توافقاً مع QGIS. يتميز بدقة تفاصيل الشوارع، والمباني، والأسماء المحلية، وهو مفتوح المصدر بالكامل." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="2-3/ كيفية استخدام Open Street Maps">
+  <meta itemprop="description" content="open street maps">
+  <meta itemprop="datePublished" content="2026-04-06T17:11:25+01:00">
+  <meta itemprop="dateModified" content="2026-04-06T17:11:25+01:00">
+  <meta itemprop="wordCount" content="547">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/osm/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="2-3/ كيفية استخدام Open Street Maps">
+  <meta property="og:description" content="open street maps">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-06T17:11:25+01:00">
+    <meta property="article:modified_time" content="2026-04-06T17:11:25+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="2-3/ كيفية استخدام Open Street Maps">
+  <meta name="twitter:description" content="open street maps">
+
+  <link rel="canonical" href="https://example.org/posts/osm/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">2-3/ كيفية استخدام Open Street Maps</h1><div class="text-xs antialiased opacity-60"><time>06‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="1--خرائط-الأساس">1- خرائط الأساس:</h1>
+<p>تُعد <strong>خرائط الخلفية (Basemaps)</strong> وخرائط الشبكة (Web Map Services) الروح البصرية لمشاريع نظم المعلومات الجغرافية في QGIS؛ فهي توفر السياق الجغرافي اللازم لفهم البيانات التي يقوم المستخدم بإضافتها. بدلاً من العمل في مساحة بيضاء فارغة، تتيح هذه الموارد (مثل OpenStreetMap، Google Maps، و Esri) وضع الطبقات الخاصة بك فوق خريطة واقعية ومحدثة للعالم.</p>
+<h3 id="1-أهم-الموارد-المتاحة-داخل-qgis">1. أهم الموارد المتاحة داخل QGIS:</h3>
+<ul>
+<li>
+<p><strong>خرائط OpenStreetMap (OSM):</strong> هو &ldquo;ويكيبيديا الخرائط&rdquo;، وهو المورد الافتراضي والأكثر توافقاً مع QGIS. يتميز بدقة تفاصيل الشوارع، والمباني، والأسماء المحلية، وهو مفتوح المصدر بالكامل.</p>
+</li>
+<li>
+<p><strong>خرائط Google Maps (Satellite &amp; Terrain):</strong> توفر صوراً جوية عالية الدقة (BIRD&rsquo;S EYE VIEW) تسمح للمستخدم برؤية تفاصيل الأسطح، الأشجار، والمنشآت بدقة متناهية لا توفرها الخرائط المرسومة.</p>
+</li>
+<li>
+<p><strong>خرائط Esri Basemaps:</strong> تشتهر بخرائطها المتخصصة مثل (Esri Satellite) و (Esri Topo) التي تركز على التضاريس والخطوط الكنتورية، وهي مفيدة جداً في الدراسات البيئية والهندسية.</p>
+</li>
+<li>
+<p><strong>خرائط الارتفاعات والمناخ:</strong> تتوفر أيضاً خدمات (WMS/WMTS) توفر بيانات حية عن الطقس، الغطاء النباتي، أو الارتفاعات الرقمية من وكالات عالمية مثل NASA.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-لماذا-نحتاج-إلى-هذه-الموارد-الأهمية">2. لماذا نحتاج إلى هذه الموارد؟ (الأهمية)</h3>
+<ul>
+<li>
+<p><strong>المرجع المكاني البصري:</strong> تساعد في التأكد من أن بياناتك (مثل ملف الشيب فايل) تقع في مكانها الصحيح. إذا رسمت طريقاً وظهر فوق البحر في خريطة Google، فستعرف فوراً أن هناك خطأ في نظام الإحداثيات الخاص بك.</p>
+</li>
+<li>
+<p><strong>توفير الجهد والوقت:</strong> بدلاً من رسم شوارع المدينة بالكامل يدوياً، يمكنك استخدام خلفية OSM الجاهزة والتركيز فقط على رسم المعالم الخاصة بدراستك (مثل مواقع الصيدليات).</p>
+</li>
+<li>
+<p><strong>إعطاء قيمة جمالية وواقعية:</strong> الخريطة التي تحتوي على خلفية &ldquo;صورة قمر صناعي&rdquo; تكون أكثر إقناعاً وفهماً لصناع القرار والجمهور العادي مقارنة بالخريطة الصماء.</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-حالات-الاستخدام-use-cases">3. حالات الاستخدام (Use Cases):</h3>
+<ul>
+<li>
+<p><strong>التخطيط الحضري:</strong> استخدام صور Google Satellite لمقارنة المخططات الهندسية الجديدة مع الواقع الحالي للمباني على الأرض.</p>
+</li>
+<li>
+<p><strong>العمليات الميدانية والطوارئ:</strong> استخدام خرائط OSM لتحديد أسرع المسارات لسيارات الإسعاف بناءً على شبكة الطرق المحدثة.</p>
+</li>
+<li>
+<p><strong>الدراسات البيئية:</strong> تتبع الزحف العمراني أو تقلص الغابات عبر مقارنة خرائط تاريخية بخرائط الأقمار الصناعية الحالية.</p>
+</li>
+<li>
+<p><strong>الرقمنة (Digitizing):</strong> استخدام خريطة الخلفية كمرجع &ldquo;لشف&rdquo; أو رسم معالم جديدة؛ حيث يقوم المستخدم بالرسم فوق صورة القمر الصناعي لإنشاء طبقات (Vector) جديدة للمباني أو المزارع.</p>
+</li>
+</ul>
+<hr>
+<h3 id="نصيحة">نصيحة:</h3>
+<p>في QGIS، يتم الوصول لهذه الخرائط غالباً عبر لوحة <strong>Browser</strong> تحت قسم <strong>XYZ Tiles</strong>. من المهم معرفة أن هذه الخرائط تحتاج إلى <strong>اتصال بالإنترنت</strong> لتعمل، لأنها تُحمل بشكل ديناميكي من خوادم الشركات المزودة للخدمة.</p>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<p>1- <a href="https://www.youtube.com/watch?v=ciXEM_eJ0vs&amp;list=PLfzYIeY-sGKYjAfldLKgdm9vGXz84FDOJ&amp;index=3">إضغط هنا</a> لمعرفة كيفية إضافة احداثيات لخريطتك من ملف Excel</p>
+<p>2- <a href="https://www.youtube.com/watch?v=NT1dC1dTmkM&amp;list=PLfzYIeY-sGKYjAfldLKgdm9vGXz84FDOJ&amp;index=4">إضغط هنا</a> هذا الفيديو تم استخدامه سابقا لشرح كيفية تثبيت الإضافات لكن الآن ستحتاج للتركيز في جزئية ما بعد تثبيت الإضافات و كيفية إضافة خرائط أساس من مصادر مختلفة لتستخدمها في مشاريعك</p>
+<p>3- <a href="https://www.youtube.com/watch?v=p1hV9_KtxsE">إضغط هنا</a> هذا الفيديو يشرح كيفية تثبيت اضافة مهمة اسمها &ldquo;quickosm&rdquo; تساعدك في دراسة و تخصيص جزء معين ذو اهتمام بالنسبة لك في الخريطة و استيراده كملف بشكل منفصل لدراسته أو لمشاركته</p>
+<p>4- <a href="https://www.youtube.com/watch?v=XHQawq_tP98">إضغط هنا</a> هذا الفيديو يشرح كيفية إضافة طبقة open street map لمشروعك</p>
+<p>5- <a href="https://www.youtube.com/watch?v=pBkQMw4ismE&amp;list=PLWMO8r4-0ZxM99cmDkkEug3Vh-UbQ3KbR">إضغط هنا</a> هذه قائمة تشغيل تحتوي مجموعة فيديوهات تتعلق بكيفية استيراد الخرائط و استيراد بياناتها</p>
+<p>6- <a href="https://www.youtube.com/watch?v=hh2Lx8PSeMU">إضغط هنا</a> هذا الفيديو القصير يشرح كيفية تغيير شفافية الطبقات أحيانا عندنا تكون عدة طبقات متراصة فوق بعضها ستحتاج إلى تغيير الشفافية لطبقة ما أول عدة طبقات لرؤية ما تحتها</p>
+<p>7- <a href="https://www.youtube.com/watch?v=dNfCNnVfyvY">إضغط هنا</a> هذا الفيديو يشرح طريقة إضافة labeling، أثناء العمل على خرائط نجد أن شيئا مثل labeling مهم للغاية لإضافة أسماء مخصصة أو وحدات قياس&hellip;الخ لكل جزء الخريطة التي نعمل عليها&hellip;.و <a href="https://www.youtube.com/watch?v=0Hv_CIbvNSo&amp;list=PLWMO8r4-0ZxNoQ4anDUG_NhuKCeTw69mf">قائمة التشغيل هذه</a> إختيارية لمشاهدتها لكنها تحتوي على نصائح إضافية لعملية labeling</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/cartography/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>2-4/ الكارتوغرافيا Cartography</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/identify_selection/"
+      ><span>2-2-1/  استنطاق الخريطة (Identify &amp; Selection)</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

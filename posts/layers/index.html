@@ -1,0 +1,331 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>1-5/ الطبقات - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="
+هندسة الطبقات (Layers) وتراكب البيانات الجغرافية
+تُعد الطبقات (Layers) الحجر الزاوي في نظم المعلومات الجغرافية. بدون هذا المفهوم، لكان الـ GIS مجرد برنامج رسم خرائط جامد. الطبقات هي التي تسمح لنا بتفكيك الواقع المعقد إلى عناصر بسيطة يمكن إدارتها، تحليلها، وعرضها بشكل منطقي.
+
+1. المفهوم التقني للطبقات (The Layers Concept)
+تخيل أنك تنظر إلى خريطة لمدينة من الأعلى. بدلاً من رؤية كل شيء كصورة واحدة (مثل الصورة الفوتوغرافية)، يقوم الـ GIS بفصل كل &ldquo;نوع&rdquo; من المعالم في شريحة شفافة مستقلة." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="1-5/ الطبقات">
+  <meta itemprop="description" content="الطبقات">
+  <meta itemprop="datePublished" content="2026-04-04T23:14:08+01:00">
+  <meta itemprop="dateModified" content="2026-04-04T23:14:08+01:00">
+  <meta itemprop="wordCount" content="582">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/layers/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="1-5/ الطبقات">
+  <meta property="og:description" content="الطبقات">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T23:14:08+01:00">
+    <meta property="article:modified_time" content="2026-04-04T23:14:08+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1-5/ الطبقات">
+  <meta name="twitter:description" content="الطبقات">
+
+  <link rel="canonical" href="https://example.org/posts/layers/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">1-5/ الطبقات</h1><div class="text-xs antialiased opacity-60"><time>04‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><hr>
+<h1 id="هندسة-الطبقات-layers-وتراكب-البيانات-الجغرافية">هندسة الطبقات (Layers) وتراكب البيانات الجغرافية</h1>
+<p>تُعد <strong>الطبقات (Layers)</strong> الحجر الزاوي في نظم المعلومات الجغرافية. بدون هذا المفهوم، لكان الـ GIS مجرد برنامج رسم خرائط جامد. الطبقات هي التي تسمح لنا بتفكيك الواقع المعقد إلى عناصر بسيطة يمكن إدارتها، تحليلها، وعرضها بشكل منطقي.</p>
+<hr>
+<h2 id="1-المفهوم-التقني-للطبقات-the-layers-concept">1. المفهوم التقني للطبقات (The Layers Concept)</h2>
+<p>تخيل أنك تنظر إلى خريطة لمدينة من الأعلى. بدلاً من رؤية كل شيء كصورة واحدة (مثل الصورة الفوتوغرافية)، يقوم الـ GIS بفصل كل &ldquo;نوع&rdquo; من المعالم في شريحة شفافة مستقلة.</p>
+<ul>
+<li>
+<p><strong>الطبقة الأولى:</strong> تمثل المباني فقط.</p>
+</li>
+<li>
+<p><strong>الطبقة الثانية:</strong> تمثل شبكة الطرق فقط.</p>
+</li>
+<li>
+<p><strong>الطبقة الثالثة:</strong> تمثل الغطاء النباتي.</p>
+</li>
+<li>
+<p><strong>الطبقة الرابعة:</strong> تمثل التضاريس (الارتفاعات).</p>
+</li>
+</ul>
+<p>عند وضع هذه الشرائح فوق بعضها البعض بدقة، تظهر لنا صورة المدينة الكاملة. هذا ما نسميه <strong>التمثيل الطبقي للواقع</strong>.</p>
+<hr>
+<h2 id="2-كيف-تعمل-الطبقات-تقنيا">2. كيف تعمل الطبقات تقنياً؟</h2>
+<p>تعتمد آلية عمل الطبقات على ركنين أساسيين:</p>
+<h3 id="أ-المرجع-المكاني-الموحد-georeferencing">أ. المرجع المكاني الموحد (Georeferencing)</h3>
+<p>لكي تنطبق طبقة &ldquo;المباني&rdquo; تماماً فوق طبقة &ldquo;الطرق&rdquo;، يجب أن تشترك جميع الطبقات في <strong>نظام إحداثيات واحد (Coordinate System)</strong> ومرجع جيوديسي واحد (Datum). إذا كان لكل طبقة نظام مختلف، ستظهر الطبقات &ldquo;مُزاحة&rdquo; عن بعضها البعض، مما يجعل التحليل مستحيلاً.</p>
+<h3 id="ب-الربط-بين-المكان-والوصف-the-link">ب. الربط بين المكان والوصف (The Link)</h3>
+<p>كل طبقة في الـ GIS ليست مجرد رسم، بل هي واجهة لـ <strong>قاعدة بيانات</strong>.</p>
+<ul>
+<li>
+<p>كل معلم (Feature) في الطبقة له &ldquo;سجل&rdquo; (Record) في جدول البيانات الوصفية.</p>
+</li>
+<li>
+<p>عندما تقوم بإطفاء طبقة أو تشغيلها، أنت تتحكم في عرض البيانات الجغرافية والوصفية المرتبطة بها معاً.</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-تنظيم-وترتيب-الطبقات-drawing-order">3. تنظيم وترتيب الطبقات (Drawing Order)</h2>
+<p>في برامج الـ GIS، توجد قائمة تسمى &ldquo;جدول المحتويات&rdquo; (Table of Contents). ترتيب الطبقات في هذه القائمة يحدد من يظهر &ldquo;فوق&rdquo; الآخر على الشاشة.</p>
+<p><strong>القاعدة الذهبية للترتيب البصري:</strong></p>
+<ol>
+<li>
+<p><strong>الطبقات النقطية (Points):</strong> توضع دائماً في الأعلى (لأنها أصغر المعالم).</p>
+</li>
+<li>
+<p><strong>الطبقات الخطية (Lines):</strong> توضع تحت النقاط.</p>
+</li>
+<li>
+<p><strong>الطبقات المساحية (Polygons):</strong> توضع تحت الخطوط.</p>
+</li>
+<li>
+<p><strong>طبقات الراستر (Raster/Basemaps):</strong> توضع في الأسفل كقاعدة للخريطة.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>لماذا هذا الترتيب؟</strong> لو وضعت طبقة &ldquo;المساحات&rdquo; فوق &ldquo;النقاط&rdquo;، ستغطي المساحة (مثل الغابة) النقطة (مثل بئر الماء) وتخفيها تماماً عن المستخدم.</p>
+</blockquote>
+<hr>
+<h2 id="4-التحليل-المكاني-عبر-الطبقات-spatial-overlay">4. التحليل المكاني عبر الطبقات (Spatial Overlay)</h2>
+<p>هنا تكمن القوة الحقيقية للـ GIS. الطبقات تسمح لنا بإجراء عمليات رياضية ومنطقية بين &ldquo;الشرائح&rdquo; المختلفة:</p>
+<ul>
+<li>
+<p><strong>عملية التقاطع (Intersect):</strong> &ldquo;إيجاد المناطق التي تتقاطع فيها طبقة (التربة الصالحة) مع طبقة (توفر المياه)&rdquo;.</p>
+</li>
+<li>
+<p><strong>عملية الاتحاد (Union):</strong> دمج خصائص طبقتين مختلفتين في طبقة واحدة جديدة.</p>
+</li>
+<li>
+<p><strong>عملية التحرير (Clipping):</strong> استخدام حدود طبقة (مثل حدود مدينة) لقص بيانات طبقة أخرى (مثل شبكة الطرق) لتناسب تلك المدينة فقط.</p>
+</li>
+</ul>
+<hr>
+<h2 id="5-أنواع-الطبقات-الشائعة-في-الدراسات-الجغرافية">5. أنواع الطبقات الشائعة في الدراسات الجغرافية</h2>
+<p>كمتخصص في الجغرافيا، ستتعامل مع عدة أنواع من الطبقات:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>نوع الطبقة</strong></th>
+          <th><strong>محتواها الجغرافي</strong></th>
+          <th><strong>أمثلة من الواقع الجغرافي</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>طبقة معالم (Feature Layer)</strong></td>
+          <td>متجهات (نقطة، خط، مضلع)</td>
+          <td>حدود الولايات، مسارات الأنهار، مواقع المدارس.</td>
+      </tr>
+      <tr>
+          <td><strong>طبقة أساس (Basemap)</strong></td>
+          <td>صور جوية أو خرائط مرجعية</td>
+          <td>خرائط قمر صناعي من Google أو OpenStreetMap.</td>
+      </tr>
+      <tr>
+          <td><strong>طبقة سطح (Surface Layer)</strong></td>
+          <td>بيانات راستر (Raster)</td>
+          <td>خرائط الارتفاعات الرقمية (DEM) أو خرائط درجات الحرارة.</td>
+      </tr>
+      <tr>
+          <td><strong>طبقة زمنية (Temporal Layer)</strong></td>
+          <td>بيانات مرتبطة بالوقت</td>
+          <td>تتبع مسار إعصار عبر الزمن أو التوسع العمراني عبر العقود.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="6-فوائد-نظام-الطبقات-للجغرافيين">6. فوائد نظام الطبقات للجغرافيين</h2>
+<ol>
+<li>
+<p><strong>العزل والتركيز:</strong> يمكنك دراسة طبقة &ldquo;المناخ&rdquo; بمفردها دون التشويش من طبقة &ldquo;السكان&rdquo;.</p>
+</li>
+<li>
+<p><strong>تعدد المصادر:</strong> يمكنك جلب طبقة من خادم إنترنت (Web Layer) ودمجها مع طبقة رسمتها بنفسك ميدانياً.</p>
+</li>
+<li>
+<p><strong>إدارة البيانات الضخمة:</strong> بدلاً من فتح ملف واحد عملاق، يمكنك فتح الطبقات التي تحتاجها فقط لتوفير موارد الحاسوب.</p>
+</li>
+</ol>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<h3 id="1--إطلع-على-المقال-حول-الطبقات-في-الموقع-الرسمي-esri">1- إطلع على <a href="https://doc.arcgis.com/ar/arcgis-online/reference/layers.htm">المقال حول الطبقات في الموقع الرسمي esri</a></h3>
+<h3 id="2--إطلع-على-الفيديو-بعنوان--413-arcgis--الطبقات-layers-لنظرة-مرئية-حول-كيف-تتعامل-برامج-gis-مع-الطبقات-لا-داعي-لمحاولة-فهم-التفاصيل-التقنية-للبرنامج-المستخدم-في-الفيديو-المهم-فهم-الفكرة-الأساسية">2- إطلع على الفيديو بعنوان <a href="https://www.youtube.com/watch?v=HOfaJps4EzY"># 4.1.3 ArcGIS | الطبقات Layers</a> لنظرة مرئية حول كيف تتعامل برامج GIS مع الطبقات، لا داعي لمحاولة فهم التفاصيل التقنية للبرنامج المستخدم في الفيديو المهم فهم الفكرة الأساسية</h3>
+<h3 id="3--هذا-الفيديو-القصير--gis-level-1-video-6-data-layers-يعطي-نظرة-على-الطبقات-layers-كمثال-من-google-maps">3- هذا الفيديو القصير <a href="https://www.youtube.com/watch?v=Jy_P1oR3PJI"># GIS Level 1 Video 6: Data layers</a> يعطي نظرة على الطبقات (Layers) كمثال من google maps</h3>
+<h3 id="4-">4-</h3>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/quiz/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>1-6/ إختبار/Quiz</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/coordinate_systems/"
+      ><span>1-4/ أنظمة الإحداثيات</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

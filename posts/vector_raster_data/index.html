@@ -1,0 +1,524 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="
+1- مقدمة تعريفية عن Vector و Raster:
+
+لغات التمثيل الرقمي (Vector &amp; Raster)
+بعد أن عرفنا أن البيانات المكانية تحدد &ldquo;أين&rdquo; تقع المعالم، يأتي السؤال الأهم: كيف نُرسم هذه المعالم داخل الحاسوب؟ في عالم نظم المعلومات الجغرافية، لا توجد طريقة واحدة لتمثيل الواقع، بل نستخدم &ldquo;لغتين&rdquo; أو نموذجين أساسيين، واختيارك لأحدهما يعتمد على طبيعة الظاهرة التي تدرسها:
+1. نموذج المتجهات (Vector)
+تخيل أنك تمسك بمرسمة وتحدد نقاطاً دقيقة على الورقة ثم تصل بينها. هذا هو &ldquo;الفيكتور&rdquo;. هو نموذج يعتمد على الهندسة الدقيقة لتمثيل المعالم التي لها حدود واضحة ومنفصلة، مثل المباني، الطرق، أو حدود الدول. في هذا النموذج، العالم عبارة عن نقاط وخطوط ومساحات." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية">
+  <meta itemprop="description" content="البيانات المتجهة Vector و البيانات النقطية Raster">
+  <meta itemprop="datePublished" content="2026-04-04T21:10:52+01:00">
+  <meta itemprop="dateModified" content="2026-04-04T21:10:52+01:00">
+  <meta itemprop="wordCount" content="1368">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/vector_raster_data/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية">
+  <meta property="og:description" content="البيانات المتجهة Vector و البيانات النقطية Raster">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T21:10:52+01:00">
+    <meta property="article:modified_time" content="2026-04-04T21:10:52+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية">
+  <meta name="twitter:description" content="البيانات المتجهة Vector و البيانات النقطية Raster">
+
+  <link rel="canonical" href="https://example.org/posts/vector_raster_data/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية</h1><div class="text-xs antialiased opacity-60"><time>04‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><hr>
+<h1 id="1--مقدمة-تعريفية-عن-vector-و-raster">1- مقدمة تعريفية عن Vector و Raster:</h1>
+<hr>
+<h1 id="لغات-التمثيل-الرقمي-vector--raster">لغات التمثيل الرقمي (Vector &amp; Raster)</h1>
+<p>بعد أن عرفنا أن البيانات المكانية تحدد &ldquo;أين&rdquo; تقع المعالم، يأتي السؤال الأهم: <strong>كيف نُرسم هذه المعالم داخل الحاسوب؟</strong> في عالم نظم المعلومات الجغرافية، لا توجد طريقة واحدة لتمثيل الواقع، بل نستخدم &ldquo;لغتين&rdquo; أو نموذجين أساسيين، واختيارك لأحدهما يعتمد على طبيعة الظاهرة التي تدرسها:</p>
+<h3 id="1-نموذج-المتجهات-vector">1. نموذج المتجهات (Vector)</h3>
+<p>تخيل أنك تمسك بمرسمة وتحدد نقاطاً دقيقة على الورقة ثم تصل بينها. هذا هو &ldquo;الفيكتور&rdquo;. هو نموذج يعتمد على <strong>الهندسة الدقيقة</strong> لتمثيل المعالم التي لها حدود واضحة ومنفصلة، مثل المباني، الطرق، أو حدود الدول. في هذا النموذج، العالم عبارة عن نقاط وخطوط ومساحات.</p>
+<h3 id="2-نموذج-الراستر-raster">2. نموذج الراستر (Raster)</h3>
+<p>تخيل الآن أنك تنظر إلى صورة فوتوغرافية مكبرة جداً حتى بدأت ترى المربعات الصغيرة (البكسلات). هذا هو &ldquo;الراستر&rdquo;. هو نموذج يعتمد على <strong>الشبكات</strong>، حيث يقسم الأرض إلى مربعات متساوية تحمل كل منها قيمة معينة. هو النموذج المثالي لتمثيل الظواهر المستمرة التي ليس لها حدود حادة، مثل درجات الحرارة، الارتفاعات، أو صور الأقمار الصناعية.</p>
+<hr>
+<p><strong>باختصار:</strong> الفيكتور يركز على <strong>&ldquo;الشكل والحدود&rdquo;</strong>، بينما الراستر يركز على <strong>&ldquo;المساحة والتغير المستمر&rdquo;</strong>. في هذا الدرس، سنتعمق في خصائص كل منهما، ومتى يجب عليك كجغرافي اختيار أحدهما دون الآخر.</p>
+<hr>
+<h1 id="2--البيانات-النقطية-raster-data">2- البيانات النقطية (Raster data):</h1>
+<hr>
+<p>تُعد <strong>البيانات الشبكية (Raster)</strong> الركيزة الأساسية لتمثيل الظواهر المستمرة على سطح الأرض. وهي تتكون من مصفوفة من الخلايا أو النقاط (Pixels)، حيث تمثل كل خلية مساحة محددة على الواقع وتخزن قيمة رقمية تعبر عن ظاهرة معينة.</p>
+<h3 id="1-مفهوم-الدقة-والمساحة-gsd">1. مفهوم الدقة والمساحة (GSD)</h3>
+<p>تعتمد جودة البيانات الشبكية على ما يسمى <strong>بمسافة العينة الأرضية (Ground Sampling Distance - GSD)</strong>:</p>
+<ul>
+<li>
+<p><strong>العلاقة العكسية:</strong> كلما صغرت قيمة الـ <strong>GSD</strong>، زادت دقة الوضوح (Resolution) وتفاصيل الخريطة.</p>
+</li>
+<li>
+<p><strong>تمثيل البيانات:</strong> تخزن كل خلية قيمة رقمية فريدة تعبر عن معلومة فيزيائية، مثل درجة الحرارة، الارتفاع عن سطح البحر، أو انعكاس اللون.</p>
+</li>
+</ul>
+<h3 id="2-الخصائص-الجوهرية-للبيانات-الشبكية">2. الخصائص الجوهرية للبيانات الشبكية</h3>
+<p>تتميز هذه البيانات بهيكل هندسي وبرمجي محدد:</p>
+<ul>
+<li>
+<p><strong>الهيكل الشبكي (Grid-based):</strong> تتوزع البيانات في صفوف وأعمدة تشبه الصور الرقمية، مما يسهل معالجتها برمجياً.</p>
+</li>
+<li>
+<p><strong>التمثيل المستمر (Continuous Representation):</strong> هي الأداة المثالية لتمثيل الظواهر التي ليس لها حدود قاطعة وتتغير تدريجياً في المكان، مثل المناخ والتضاريس.</p>
+</li>
+<li>
+<p><strong>الارتباط بالدقة:</strong> تُقاس كفاءة البيانات بحجم الخلية؛ فالخلايا الأصغر تعني تفاصيل أدق وقدرة تحليلية أكبر.</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-الأنواع-والتطبيقات-العملية-للبيانات-الشبكية">3. الأنواع والتطبيقات العملية للبيانات الشبكية</h3>
+<p>تتعدد أشكال هذه البيانات لتغطي كافة احتياجات التحليل الجغرافي:</p>
+<ul>
+<li>
+<p><strong>نماذج الارتفاعات الرقمية (DEM &amp; DTM):</strong> تمثل تضاريس الأرض وقيم الارتفاع، وتستخدم بشكل أساسي في تحليل الميول، ونمذجة الفيضانات، والدراسات الهيدرولوجية.</p>
+</li>
+<li>
+<p><strong>الصور الجوية المصححة (Orthophotos):</strong> صور عالية الدقة يتم معالجتها لإزالة التشويه الناتج عن ميل الكاميرا وتضاريس الأرض، مما يجعلها خرائط دقيقة تُستخدم في التخطيط العمراني.</p>
+</li>
+<li>
+<p><strong>المرئيات الفضائية (Satellite Imagery):</strong> بيانات يتم التقاطها عبر الأقمار الصناعية، وهي ضرورية لمراقبة التغيرات البيئية الواسعة، وتقييم المحاصيل الزراعية، والتوسع الحضري.</p>
+</li>
+<li>
+<p><strong>خرائط غطاء واستخدام الأراضي:</strong> تصنيفات رقمية تقسم الأرض إلى فئات (غابات، مناطق سكنية، مسطحات مائية) لدراسة التوازن البيئي.</p>
+</li>
+<li>
+<p><strong>البيانات المناخية والجوية:</strong> مصفوفات مكانية ترصد المتغيرات الجوية مثل هطول الأمطار والرطوبة، وتستخدم في نماذج التنبؤ المناخي.</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-صيغ-الملفات-وتداول-البيانات">4. صيغ الملفات وتداول البيانات</h3>
+<p>تُخزن البيانات الشبكية بصيغ برمجية مختلفة تتناسب مع نوع الاستخدام:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>الصيغة</strong></th>
+          <th><strong>الامتداد</strong></th>
+          <th><strong>المميزات والاستخدام</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>GeoTIFF</strong></td>
+          <td><code>.tif</code></td>
+          <td>الصيغة الأكثر شيوعاً في الـ GIS؛ تدعم الإسناد الجغرافي والبيانات الوصفية (Metadata).</td>
+      </tr>
+      <tr>
+          <td><strong>JPEG</strong></td>
+          <td><code>.jpg</code></td>
+          <td>تُستخدم لضغط الصور الفوتوغرافية، لكنها غير مفضلة في التحليل المكاني الدقيق بسبب فقدان بعض البيانات عند الضغط.</td>
+      </tr>
+      <tr>
+          <td><strong>PNG</strong></td>
+          <td><code>.png</code></td>
+          <td>تدعم الشفافية والضغط دون فقدان الجودة (Lossless)، وهي مثالية لتطبيقات الخرائط عبر الويب.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="3--البيانات-المتجهةالإتجاهية-vector-data">3- البيانات المتجهة/الإتجاهية (Vector data):</h1>
+<hr>
+<p>تُعرف <strong>البيانات المتجهة (Vector)</strong> بأنها الأسلوب التقني لتمثيل المعالم الجغرافية فوق سطح الأرض باستخدام الهندسة الرياضية. وخلافاً للبيانات الشبكية (Raster) التي تعتمد على المربعات، تعتمد البيانات المتجهة على <strong>الإحداثيات ($x, y$)</strong>، وأحياناً الإحداثي الثالث ($z$) لتمثيل الارتفاعات، مما يمنحها دقة هندسية فائقة.</p>
+<h3 id="1-الخصائص-الجوهرية-للبيانات-المتجهة">1. الخصائص الجوهرية للبيانات المتجهة</h3>
+<p>تتميز هذه البيانات بمجموعة من السمات التي تجعلها المفضلة في العمليات الهندسيّة والقانونية:</p>
+<ul>
+<li>
+<p><strong>نظام الإحداثيات الدقيق:</strong> تُحدد الأشكال والمواقع بدقة متناهية عبر نقاط إحداثية، مما يسمح بتمثيل ثنائي أو ثلاثي الأبعاد للمواقع.</p>
+</li>
+<li>
+<p><strong>تمثيل البيانات المنفصلة (Discrete):</strong> هي الأداة المثالية لتمثيل المعالم ذات الحدود الواضحة والمعروفة، مثل حدود الملكيات، مسارات الطرق، أو مواقع المباني.</p>
+</li>
+<li>
+<p><strong>القدرة العالية على القياس (Scalability):</strong> تتميز البيانات المتجهة بإمكانية تكبيرها أو تصغيرها لأي مقياس رسم دون فقدان الدقة أو ظهور تشوه في الحواف، بخلاف الصور الرقمية.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-الأنماط-الهندسية-وتطبيقاتها">2. الأنماط الهندسية وتطبيقاتها</h3>
+<p>تتخذ البيانات المتجهة أربعة أشكال رئيسية بناءً على طبيعة المعلم الجغرافي:</p>
+<ul>
+<li>
+<p><strong>النقاط (Points):</strong> تمثل مواقع جغرافية محددة ومنفردة (إحداثي $x, y$). تُستخدم لتمثيل المعالم الصغيرة بالنسبة لمقياس الرسم، مثل: أعمدة الإنارة، آبار المياه، أو المواقع الأثرية.</p>
+</li>
+<li>
+<p><strong>الخطوط (Lines/Polylines):</strong> تتكون من سلسلة من النقاط المتصلة بقطع مستقيمة أو منحنية. تُستخدم لتمثيل الظواهر الطولية مثل: شبكات الطرق، مجاري الأنهار، وأنابيب النفط.</p>
+</li>
+<li>
+<p><strong>المضلعات (Polygons):</strong> مساحات مغلقة محاطة بسلسلة من الخطوط المتصلة. تُستخدم لتمثيل المساحات ذات المساحة والمحيط، مثل: البحيرات، الأحياء السكنية، والحدود الإدارية للدول.</p>
+</li>
+<li>
+<p><strong>الشبكات (Networks):</strong> وهي مجموعة معقدة ومترابطة من النقاط والخطوط، تُستخدم خصيصاً لنمذجة حركة المرور، شبكات توزيع المياه، أو خطوط الاتصالات السلكية.</p>
+</li>
+<li>
+<p><strong>الخطوط الكنتورية (Contours):</strong> خطوط متجهة يتم استخراجها غالباً من النماذج الشبكية (DEM)، تربط بين النقاط المتساوية في الارتفاع، وهي ضرورية جداً في التصميم الهندسي وتحليل تضاريس الأرض.</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-صيغ-الملفات-والمعايير-البرمجية">3. صيغ الملفات والمعايير البرمجية</h3>
+<p>تتنوع صيغ ملفات البيانات المتجهة لتناسب منصات العرض والتحليل المختلفة:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>الصيغة</strong></th>
+          <th><strong>الامتداد</strong></th>
+          <th><strong>الوصف والاستخدام</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Shapefile</strong></td>
+          <td><code>.shp</code></td>
+          <td>الصيغة الأكثر انتشاراً وتاريخاً؛ تتكون من عدة ملفات فرعية لتخزين الهندسة والبيانات الوصفية.</td>
+      </tr>
+      <tr>
+          <td><strong>GeoJSON</strong></td>
+          <td><code>.geojson</code></td>
+          <td>صيغة خفيفة تعتمد على لغة (JSON)، وهي المفضلة لمطوري تطبيقات الويب والخرائط التفاعلية.</td>
+      </tr>
+      <tr>
+          <td><strong>KML/KMZ</strong></td>
+          <td><code>.kml</code></td>
+          <td>لغة ترميز جغرافية طورتها &ldquo;جوجل&rdquo;، وتُستخدم بشكل واسع في برنامج Google Earth لعرض البيانات المكانية.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-تحسين-الكفاءة-واتخاذ-القرار">4. تحسين الكفاءة واتخاذ القرار</h3>
+<p>كما ورد في المصادر السابقة، فإن استخدام البيانات المتجهة يساهم بفاعلية في:</p>
+<ul>
+<li>
+<p><strong>تحسين الإنتاجية:</strong> عبر بناء قواعد بيانات موحدة تسهل الاتصال بين الأقسام المختلفة وتمنع تكرار جمع البيانات.</p>
+</li>
+<li>
+<p><strong>دعم اتخاذ القرار:</strong> من خلال إمكانية الاستفسار والتحليل الدقيق، مثل اختيار أنسب الأماكن بناءً على معايير البعد عن الطرق الرئيسية أو مراكز التلوث.</p>
+</li>
+<li>
+<p><strong>المرونة في بناء الخرائط:</strong> حيث تعد عملية بناء الخرائط بالبيانات المتجهة أكثر مرونة من الطرق اليدوية التقليدية.</p>
+</li>
+</ul>
+<hr>
+<h1 id="4--مقارنة-بين-vector-و-raster">4- مقارنة بين Vector و Raster:</h1>
+<hr>
+<h2 id="المقارنة-التفصيلية-المتجهات-vector-مقابل-الراستر-raster">المقارنة التفصيلية: المتجهات (Vector) مقابل الراستر (Raster)</h2>
+<p>في نظم المعلومات الجغرافية، اختيار النموذج المناسب يشبه اختيار الأداة الصحيحة للرسم؛ فإما أن تستخدم &ldquo;قلم الرصاص&rdquo; لرسم حدود دقيقة (Vector)، أو تستخدم &ldquo;فرشاة التلوين&rdquo; لملء مساحات متدرجة (Raster).</p>
+<h3 id="1-طبيعة-التمثيل-representation">1. طبيعة التمثيل (Representation)</h3>
+<ul>
+<li>
+<p><strong>المتجهات (Vector):</strong> تمثل العالم كمعالم منفصلة (Discrete Features). تعتمد على النقاط $[x, y]$ التي تتصل لتكون خطوطاً أو مضلعات. مثالية للمعالم التي لها <strong>حدود واضحة</strong>.</p>
+</li>
+<li>
+<p><strong>الراستر (Raster):</strong> تمثل العالم كظواهر مستمرة (Continuous Phenomena). تعتمد على شبكة من الخلايا (Cells/Pixels). كل خلية تمثل مساحة محددة على الأرض وتحمل قيمة رقمية واحدة.</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-جدول-المقارنة-الفنية">2. جدول المقارنة الفنية</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>وجه المقارنة</strong></th>
+          <th><strong>نموذج المتجهات (Vector)</strong></th>
+          <th><strong>نموذج الراستر (Raster)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>العناصر الأساسية</strong></td>
+          <td>النقطة، الخط، المضلع.</td>
+          <td>الخلية (Pixel) والشبكة (Grid).</td>
+      </tr>
+      <tr>
+          <td><strong>الدقة المكانية</strong></td>
+          <td>عالية جداً؛ لا تتأثر عند التكبير (Zoom).</td>
+          <td>تعتمد على حجم الخلية (Resolution).</td>
+      </tr>
+      <tr>
+          <td><strong>حجم الملفات</strong></td>
+          <td>صغير غالباً (يخزن إحداثيات فقط).</td>
+          <td>كبير جداً (يخزن قيمة لكل خلية).</td>
+      </tr>
+      <tr>
+          <td><strong>البيانات الوصفية</strong></td>
+          <td>سهولة ربط جداول ضخمة بكل معلم.</td>
+          <td>محدودة؛ الخلية تحمل قيمة واحدة فقط.</td>
+      </tr>
+      <tr>
+          <td><strong>أفضل استخدام</strong></td>
+          <td>الخرائط الإدارية، الشبكات (طرق، مياه).</td>
+          <td>الصور الجوية، التضاريس، المناخ.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-المميزات-والعيوب">3. المميزات والعيوب</h3>
+<h4 id="أولا-المتجهات-vector">أولاً: المتجهات (Vector)</h4>
+<ul>
+<li>
+<p><strong>المميزات:</strong></p>
+<ul>
+<li>
+<p>تمثيل دقيق جداً للمعالم الخطية والمساحية.</p>
+</li>
+<li>
+<p>إمكانية إجراء تحليلات الشبكات (مثل حساب أقصر طريق بين نقطتين).</p>
+</li>
+<li>
+<p>مظهر جمالي يشبه الخرائط الورقية التقليدية.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>العيوب:</strong></p>
+<ul>
+<li>
+<p>صعوبة تمثيل الظواهر التي تتغير باستمرار (مثل درجة الحرارة).</p>
+</li>
+<li>
+<p>العمليات الحسابية بين الطبقات (Overlay) تكون معقدة برمجياً.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ثانيا-الراستر-raster">ثانياً: الراستر (Raster)</h4>
+<ul>
+<li>
+<p><strong>المميزات:</strong></p>
+<ul>
+<li>
+<p>بساطة الهيكلية (مصفوفة من الأرقام)، مما يسهل العمليات الرياضية.</p>
+</li>
+<li>
+<p>مثالي لتمثيل البيانات الإحصائية والمكانية المستمرة.</p>
+</li>
+<li>
+<p>سهولة الدمج مع صور الأقمار الصناعية.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>العيوب:</strong></p>
+<ul>
+<li>
+<p>مشكلة &ldquo;التبكسل&rdquo; (Pixelation) عند التكبير؛ حيث تفقد المعالم دقتها.</p>
+</li>
+<li>
+<p>جداول البيانات الوصفية فقيرة مقارنة بالفيكتور.</p>
+</li>
+<li>
+<p>يحتاج مساحات تخزين ضخمة ومعالجات قوية.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-أمثلة-تطبيقية-للمقارنة">4. أمثلة تطبيقية للمقارنة</h3>
+<p>تخيل أنك تدرس <strong>&ldquo;غابة&rdquo;</strong>:</p>
+<ul>
+<li>
+<p>إذا كنت تريد رسم <strong>حدود الغابة</strong> بدقة لتعرف ملكية الأرض: استخدم <strong>Vector</strong> (مضلع).</p>
+</li>
+<li>
+<p>إذا كنت تريد دراسة <strong>كثافة الأشجار</strong> وتدرج الخضرة داخل الغابة: استخدم <strong>Raster</strong> (خلايا ملونة بتدرجات الأخضر).</p>
+</li>
+</ul>
+<p>تخيل أنك تدرس <strong>&ldquo;نهر&rdquo;</strong>:</p>
+<ul>
+<li>
+<p>لحساب <strong>طول النهر</strong> ومساره: استخدم <strong>Vector</strong> (خط).</p>
+</li>
+<li>
+<p>لدراسة <strong>عمق المياه</strong> أو سرعة التيار في كل نقطة: استخدم <strong>Raster</strong>.</p>
+</li>
+</ul>
+<hr>
+<h3 id="5-التحويل-بين-النماذج-conversion">5. التحويل بين النماذج (Conversion)</h3>
+<p>في برامج الـ GIS، يمكنك التحويل بينهما، لكن بحذر:</p>
+<ol>
+<li>
+<p>عملية <strong>Vector to Raster:</strong> عملية سهلة تسمى (Rasterization)، لكنها قد تفقد بعض الدقة عند الحدود.</p>
+</li>
+<li>
+<p>عملية <strong>Raster to Vector:</strong> عملية تسمى (Vectorization)، وتستخدم لتحويل الصور الجوية إلى خرائط مرسومة، وغالباً ما تحتاج لتنقية يدوية.</p>
+</li>
+</ol>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<h3 id="1--إطلع-على-محتوى-الفيديو-7---الفرق-بين-vector---raster--ahmed-hashim-كنوع-من-التعلم-البصري-لماهية-تمثيلات-vector-و-raster">1- إطلع على محتوى الفيديو <a href="https://www.youtube.com/watch?v=403Z_7-7W7o">7 - الفرق بين (Vector - Raster) # Ahmed Hashim</a> كنوع من التعلم البصري لماهية تمثيلات Vector و Raster</h3>
+<h3 id="2--إطلع-على-الفصل-24-من-مقال-gis-module-2-spatial-data-fundamentals">2- إطلع على الفصل 2.4 من مقال <a href="https://storymaps.arcgis.com/stories/ad6624ab35b74a9c8bb52c6d39265fac#ref-n-0hvY9W">GIS Module 2: Spatial Data Fundamentals</a></h3>
+<h3 id="3--إطلع-على-المقال-understanding-raster-and-vector-geospatial-data-للإطلاع-أكثر-على-الفروق-بين-vector-و-raster-و-كذا-الفروق-بينهما-و-استخداماتهما">3- إطلع على المقال <a href="https://www.birdi.io/blog-post/understanding-raster-and-vector-geospatial-data">Understanding raster and vector geospatial data</a> للإطلاع أكثر على الفروق بين Vector و Raster و كذا الفروق بينهما و استخداماتهما</h3>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/coordinate_systems/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>1-4/ أنظمة الإحداثيات</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/spatial_attribute_data/"
+      ><span>1-2/ البيانات الوصفية و البيانات المكانية</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

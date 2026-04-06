@@ -1,0 +1,237 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>2-2-1/  استنطاق الخريطة (Identify &amp; Selection) - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1- تعريف ماهية استنطاق الخريطة (Identify &amp; Selection):
+تعتبر أدوات الاستعلام (Identify) والتحديد (Selection) في برنامج QGIS بمثابة &ldquo;الجسر&rdquo; الذي يربط بين الرسم الهندسي الموجود على الخريطة وبين قواعد البيانات الوصفية المخزنة خلفها؛ فهي الأدوات التي تمنح الجغرافي القدرة على استنطاق الخريطة وتحويلها من مجرد رسومات إلى مصدر للمعلومات والقرارات.
+1. أداة الاستعلام (Identify Tool)
+هي الأداة الأسرع والأكثر مباشرة للحصول على المعلومات. بمجرد النقر على أي معلم (نقطة، خط، أو مضلع) باستخدام هذه الأداة، تفتح لنا نافذة تعرض كافة البيانات المرتبطة بهذا المعلم في &ldquo;جدول الوصفيات&rdquo;." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="2-2-1/  استنطاق الخريطة (Identify & Selection)">
+  <meta itemprop="description" content="استنطاق الخريطة (Identify &amp; Selection)">
+  <meta itemprop="datePublished" content="2026-04-06T10:37:03+01:00">
+  <meta itemprop="dateModified" content="2026-04-06T10:37:03+01:00">
+  <meta itemprop="wordCount" content="558">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/identify_selection/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="2-2-1/  استنطاق الخريطة (Identify & Selection)">
+  <meta property="og:description" content="استنطاق الخريطة (Identify &amp; Selection)">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-06T10:37:03+01:00">
+    <meta property="article:modified_time" content="2026-04-06T10:37:03+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="2-2-1/  استنطاق الخريطة (Identify & Selection)">
+  <meta name="twitter:description" content="استنطاق الخريطة (Identify &amp; Selection)">
+
+  <link rel="canonical" href="https://example.org/posts/identify_selection/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">2-2-1/  استنطاق الخريطة (Identify &amp; Selection)</h1><div class="text-xs antialiased opacity-60"><time>06‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="1--تعريف-ماهية-استنطاق-الخريطة-identify--selection">1- تعريف ماهية استنطاق الخريطة (Identify &amp; Selection):</h1>
+<p>تعتبر أدوات <strong>الاستعلام (Identify)</strong> و<strong>التحديد (Selection)</strong> في برنامج QGIS بمثابة &ldquo;الجسر&rdquo; الذي يربط بين الرسم الهندسي الموجود على الخريطة وبين قواعد البيانات الوصفية المخزنة خلفها؛ فهي الأدوات التي تمنح الجغرافي القدرة على استنطاق الخريطة وتحويلها من مجرد رسومات إلى مصدر للمعلومات والقرارات.</p>
+<h3 id="1-أداة-الاستعلام-identify-tool">1. أداة الاستعلام (Identify Tool)</h3>
+<p>هي الأداة الأسرع والأكثر مباشرة للحصول على المعلومات. بمجرد النقر على أي معلم (نقطة، خط، أو مضلع) باستخدام هذه الأداة، تفتح لنا نافذة تعرض كافة البيانات المرتبطة بهذا المعلم في &ldquo;جدول الوصفيات&rdquo;.</p>
+<ul>
+<li><strong>لماذا نستخدمها؟</strong> نستخدمها للتحقق السريع من هوية المعالم دون الحاجة لفتح جدول البيانات الكامل والبحث فيه. مثلاً، عند النقر على &ldquo;طريق&rdquo; معين، ستعرف فوراً اسمه، طوله، وحالته الفنية.</li>
+</ul>
+<h3 id="2-أدوات-التحديد-selection-tools">2. أدوات التحديد (Selection Tools)</h3>
+<p>تتيح هذه الأدوات للمستخدم اختيار معلم واحد أو مجموعة من المعالم الجغرافية لعزلها عن البقية أو لإجراء عمليات محددة عليها. ويوفر QGIS عدة طرق للتحديد:</p>
+<ul>
+<li><strong>التحديد البصري:</strong> باستخدام الماوس لرسم مربع أو مضلع حول المعالم المطلوبة.</li>
+<li><strong>التحديد بالاستعلام (Select by Attribute):</strong> وهو الأكثر قوة، حيث نطلب من البرنامج تحديد المعالم بناءً على شرط معين (مثل: &ldquo;حدد لي جميع الأحياء التي يزيد عدد سكانها عن 5000 نسمة&rdquo;).</li>
+<li><strong>التحديد المكاني (Select by Location):</strong> تحديد المعالم بناءً على علاقتها بطبقة أخرى (مثل: &ldquo;حدد لي جميع الآبار التي تقع داخل حدود هذه البلدية&rdquo;).</li>
+</ul>
+<h3 id="3-أهمية-هذه-الأدوات-ولماذا-نحتاجها">3. أهمية هذه الأدوات ولماذا نحتاجها؟</h3>
+<p>لا تكتمل أي دراسة جغرافية بدون &ldquo;الاستعلام والتحديد&rdquo; للأسباب التالية:</p>
+<ul>
+<li><strong>عزل البيانات للتحليل:</strong> إذا كان لديك خريطة لبلد كامل وتريد دراسة مدينة واحدة فقط، ستقوم بـ &ldquo;تحديد&rdquo; تلك المدينة ثم تصديرها كطبقة مستقلة.</li>
+<li><strong>التحديث والتعديل:</strong> لا يمكنك تعديل بيانات معلم أو حذفه ما لم تقم بـ &ldquo;تحديده&rdquo; أولاً، مما يضمن دقة العمل وعدم التأثير على المعالم الأخرى بالخطأ.</li>
+<li><strong>الإحصاء المكاني:</strong> تساعدنا في الإجابة على الأسئلة الجغرافية المعقدة؛ فعندما &ldquo;نحدد&rdquo; المناطق المتضررة من فيضان، يمكننا فوراً معرفة عدد السكان المتأثرين من خلال ملخص البيانات المحددة.</li>
+<li><strong>التحقق من الجودة:</strong> نستخدم &ldquo;Identify&rdquo; للتأكد من أن البيانات التي قمنا بإدخالها صحيحة وموجودة في مكانها الجغرافي السليم.</li>
+</ul>
+<h3 id="نصيحة">نصيحة:</h3>
+<p>دائماً المعلم &ldquo;المحدد&rdquo; الذي قمنها بتحديده يظهر عادة باللون <strong>الأصفر</strong> (اللون الافتراضي في QGIS)، وهذا اللون هو إشارة للبرنامج بأن أي عملية قادمة (حساب مساحة، قص، حذف) ستطبق فقط على هذا الجزء المختار وليس على الطبقة كاملة.</p>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<p>1- <a href="https://www.youtube.com/watch?v=X-j3QzfIBIE">إضغط هنا</a> لأخذ نظرة حول كيفية استخدام selection tool و كذا أخذ نظرة عن ماهية identify result</p>
+<p>2- <a href="https://www.youtube.com/watch?v=gLhKzjHlvj4">إضغط هنا</a> لرؤية كيفية استخدام ميزة select by feature&hellip;كشرح مختصر هذه الميزة تسمح لك بالبحث عن مناطق معينة في الخريطة و تحديدها بناء على شرط أو شروط معينة، البيانات الوصفية للمناطق في الخريطة محفوظة في قاعدة بيانات مقسمة إلى أٌقسام مثل id و name &hellip; الخ و باستخدام ميزة select by feature يمكنك تحديد شروط معينة تخص مناطق معينة مما هو مسجل في قاعدة البيانات لتصفية النتائج و عرض النتائج المطلوبة لك فقط</p>
+<p>3- <a href="https://www.youtube.com/watch?v=YtYmFpKM9R8">إضغط هنا</a> هذا الفيديو يوضح شيئا مهما و هو كيفية استخدام select by attribute و الأهم هو أنه يعطيك لمحة أقرب عن كيفية التعامل بشكل متقدم قليلا مع قاعدة البيانات</p>
+<p>4- <a href="https://www.youtube.com/watch?v=32W67yHkNAk">إضغط هنا</a> هذا الفيديو مثال آخر حول ميزة select by expression</p>
+<p>5- <a href="https://www.youtube.com/watch?v=tm7EqGlWH44">إضغط هنا</a> هذا الفيديو مهم لأنه يظهر طريقة أخرى للتحديد select و كذلك كيفية إضافة أعمدة بيانات إلى قاعدة بيانات خريطتك مثل عمود للإسم&hellip;الخ مما يساعد في تخصيص الخريطة أكثر و تسهيل تحديد أجزاء معينة أو إيجادها لاحقا</p>
+<p>6- <a href="https://www.youtube.com/watch?v=J9UX66LuYQ0">إضغط هنا</a> هذا الفيديو يظهر كيفية استخدام identify tool التي تساعد في عرض معلومات حول المنطقة المحددة في الخريطة بناء على المعلومات المتوفرة عنها في قاعدة البيانات</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/osm/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>2-3/ كيفية استخدام Open Street Maps</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/symbology/"
+      ><span>2-2/ الرموز و الألوان Symbology</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

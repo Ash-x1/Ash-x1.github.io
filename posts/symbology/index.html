@@ -1,0 +1,274 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>2-2/ الرموز و الألوان Symbology - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1- تعريف الرموز و الألوان في QGIS و أهميتها:
+تُعد الرموز (Symbology) الواجهة البصرية لقواعد البيانات الجغرافية. بدونها، تظل البيانات مجرد نقاط وخطوط صماء على الشاشة. هي العلم والفن الذي يسمح للجغرافي بنقل رسالة محددة عبر الخريطة من خلال التحكم في الخصائص البصرية للمعالم.
+1. أنواع الرموز الأساسية في QGIS
+يوفر QGIS عدة طرق لتمثيل البيانات بناءً على طبيعة الجدول الوصفي المرتبط بها:
+
+
+الرمز المنفرد (Single Symbol): هو الخيار الافتراضي، حيث تظهر جميع المعالم في الطبقة بنفس اللون والشكل (مثل تلوين كل مسارات الأنهار باللون الأزرق الموحد). يُستخدم عندما لا يهمنا التمييز بين المعالم داخل الطبقة الواحدة." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="2-2/ الرموز و الألوان Symbology">
+  <meta itemprop="description" content="Symbology">
+  <meta itemprop="datePublished" content="2026-04-06T09:50:16+01:00">
+  <meta itemprop="dateModified" content="2026-04-06T09:50:16+01:00">
+  <meta itemprop="wordCount" content="582">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/symbology/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="2-2/ الرموز و الألوان Symbology">
+  <meta property="og:description" content="Symbology">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-06T09:50:16+01:00">
+    <meta property="article:modified_time" content="2026-04-06T09:50:16+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="2-2/ الرموز و الألوان Symbology">
+  <meta name="twitter:description" content="Symbology">
+
+  <link rel="canonical" href="https://example.org/posts/symbology/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">2-2/ الرموز و الألوان Symbology</h1><div class="text-xs antialiased opacity-60"><time>06‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="1--تعريف-الرموز-و-الألوان-في-qgis-و-أهميتها">1- تعريف الرموز و الألوان في QGIS و أهميتها:</h1>
+<p>تُعد <strong>الرموز (Symbology)</strong> الواجهة البصرية لقواعد البيانات الجغرافية. بدونها، تظل البيانات مجرد نقاط وخطوط صماء على الشاشة. هي العلم والفن الذي يسمح للجغرافي بنقل رسالة محددة عبر الخريطة من خلال التحكم في الخصائص البصرية للمعالم.</p>
+<h2 id="1-أنواع-الرموز-الأساسية-في-qgis">1. أنواع الرموز الأساسية في QGIS</h2>
+<p>يوفر QGIS عدة طرق لتمثيل البيانات بناءً على طبيعة الجدول الوصفي المرتبط بها:</p>
+<ul>
+<li>
+<p><strong>الرمز المنفرد (Single Symbol):</strong> هو الخيار الافتراضي، حيث تظهر جميع المعالم في الطبقة بنفس اللون والشكل (مثل تلوين كل مسارات الأنهار باللون الأزرق الموحد). يُستخدم عندما لا يهمنا التمييز بين المعالم داخل الطبقة الواحدة.</p>
+</li>
+<li>
+<p><strong>الرموز المصنفة (Categorized):</strong> تُستخدم للبيانات <strong>النوعية (Qualitative)</strong>. يعطي البرنامج لوناً مختلفاً لكل فئة بناءً على حقل نصي (مثل تلوين الأحياء السكنية حسب &ldquo;اسم البلدية&rdquo; أو &ldquo;نوع الاستخدام: زراعي، صناعي، سكني&rdquo;).</p>
+</li>
+<li>
+<p><strong>الرموز المتدرجة (Graduated):</strong> تُستخدم للبيانات <strong>الكمية (Quantitative)</strong> الرقمية. تعتمد على تدرج لوني أو حجمي لتمثيل القيم (مثل تدرج ألوان الولايات من الفاتح إلى الغامق لتمثيل &ldquo;كثافة السكان&rdquo;، أو تكبير حجم نقطة المدينة لتمثيل &ldquo;عدد السكان&rdquo;).</p>
+</li>
+</ul>
+<h2 id="2-فلسفة-اختيار-الألوان-والرموز-cartographic-logic">2. فلسفة اختيار الألوان والرموز (Cartographic Logic)</h2>
+<p>عند تصميم الرموز، لا نختار الألوان عشوائياً، بل نتبع منطقاً جغرافياً لضمان سهولة الفهم:</p>
+<ol>
+<li>
+<p><strong>الألوان الترابطية (Associative Colors):</strong> استخدام الألوان التي ترتبط ذهنياً بالظاهرة (الأزرق للمياه، الأخضر للنبات، الأحمر للخطر أو الحرارة، الأصفر للصحراء).</p>
+</li>
+<li>
+<p><strong>التباين البصري (Visual Contrast):</strong> يجب أن تبرز المعالم المهمة بوضوح فوق &ldquo;خريطة الخلفية&rdquo;. إذا كانت الخلفية داكنة (صورة قمر صناعي)، نستخدم رموزاً فاتحة أو ذات حدود (Halo/Outline) لتكون مرئية.</p>
+</li>
+<li>
+<p><strong>التوازن الكمي:</strong> في الخرائط المتدرجة، نستخدم تدرج لون واحد (مثلاً درجات الأخضر) لتمثيل ظاهرة واحدة، بينما نستخدم ألواناً مختلفة تماماً (أحمر، أزرق، أصفر) للتمييز بين أنواع مختلفة من الظواهر.</p>
+</li>
+</ol>
+<h2 id="3-لماذا-نولي-أهمية-قصوى-للرموز-الأهداف-التحليلية">3. لماذا نولي أهمية قصوى للرموز؟ (الأهداف التحليلية)</h2>
+<ul>
+<li>
+<p><strong>كشف الأنماط (Pattern Recognition):</strong> تساعد الرموز في رؤية ما لا تراه الجداول؛ فبمجرد تلوين خريطة الجرائم، قد نلاحظ تركزها في وسط المدينة، وهذا نمط مكاني لم يكن واضحاً في الأرقام.</p>
+</li>
+<li>
+<p><strong>التواصل الفعال:</strong> الخريطة هي وسيلة تواصل. الرموز الجيدة تغني عن قراءة آلاف الكلمات؛ فالمفتاح (Legend) الواضح يشرح الخريطة في ثوانٍ.</p>
+</li>
+<li>
+<p><strong>دقة القياس البصري:</strong> عبر التحكم في أحجام الرموز (Proportional Symbols)، يمكن للقارئ تقدير أحجام الظواهر (مثل حجم الصادرات والواردات) بمجرد النظر لقطر الدائرة على الخريطة.</p>
+</li>
+</ul>
+<h2 id="4-اعتبارات-تقنية-عند-العمل-على-qgis">4. اعتبارات تقنية عند العمل على QGIS</h2>
+<p>عند قيامك بعمل Symbology في مشروعك، انتبه للنقاط التالية:</p>
+<ul>
+<li>
+<p><strong>وحدات القياس (Units):</strong> هل تريد أن يظل حجم الرمز ثابتاً عند التكبير والتصغير (Millimeters) أم تريده أن يكبر ويصغر مع الخريطة (Map Units)؟</p>
+</li>
+<li>
+<p><strong>الشفافية (Transparency):</strong> أحياناً نحتاج لتقليل عتامة الطبقة لرؤية ما تحتها من معالم أو صور جوية دون فقدان حدود المعلم الأصلي.</p>
+</li>
+<li>
+<p><strong>الطبقات المركبة (Layer Rendering):</strong> في QGIS يمكنك دمج الألوان (Blending Modes) بطرق فنية تجعل الخريطة تبدو ثلاثية الأبعاد أو تبرز التضاريس بشكل أجمل.</p>
+</li>
+<li>
+<p><strong>تسمية المعالم (Labeling):</strong> الرموز لا تكتمل بدون النصوص. يجب تنسيق الخطوط والألوان لتتكامل مع الرموز دون أن تغطيها.</p>
+</li>
+</ul>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<p>1- <a href="https://www.youtube.com/watch?v=FqoCLk02X4E">إضغط هنا لمتابعة مقطع حول كيفية استخدام الرموز و الألوان في برنامج QGIS</a></p>
+<p>2- <a href="https://www.youtube.com/watch?v=3tGHUTle1_c">إضغط هنا لمتابعة شرح أكثر تفصيلا و بأمثلة أكثر حول كيفية تعديل و إضاافة و تخصيص الرموز و الألوان</a></p>
+<p>3- <a href="https://www.youtube.com/watch?v=NT1dC1dTmkM&amp;list=PLfzYIeY-sGKYjAfldLKgdm9vGXz84FDOJ&amp;index=4">إضغط هنا</a> &hellip; هذا الفيديو حول كيفية إضافة و تثبيت Plugins (الإضافات) و هي من أكثر ما يميز برنامج QGIS حيث تسمح هذه الإضافات بإضافات ميزات مختلفة سواء لجلب خرائط مباشرة من مصادر متعددة أو مصادر للرموز&hellip;الخ من الكثير من الإضافات</p>
+<p>4- <a href="https://www.youtube.com/watch?v=7N6u3VWzNpM">إضغط هنا</a> و تابع الشرح حول كيفية تثبيت إضافة خاصة بتحميل الرموز  المختلفة المستعملة في الخرائط و كذا مستودعات الأيقوانت المختلفة لاتسخدامها حسب حاجتك</p>
+<p>5- <a href="https://www.youtube.com/watch?v=n4zJPjueKsY">إضغط هنا</a> هذا فيديو تفصيلي أكثر فيما يخص إضافة الألوان و الرموز</p>
+<hr>
+<h1 id="خاتمة-الدرس">خاتمة الدرس:</h1>
+<p>هذا الدرس كان حول موضوع بسيط لكنه أساس مهم في الخرائط و هو الرموز و الألوان و كيفية تحديدها على الخرائط.</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/identify_selection/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>2-2-1/  استنطاق الخريطة (Identify &amp; Selection)</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/shapefiles/"
+      ><span>2-1-2/ ملفات Shapefile</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

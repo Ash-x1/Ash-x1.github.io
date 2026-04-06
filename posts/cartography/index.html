@@ -1,0 +1,258 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>2-4/ الكارتوغرافيا Cartography - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1- ماهية و معنى Cartography:
+يعتبر علم فن وصناعة الخرائط (Cartography) الجسر النهائي الذي يربط بين البيانات الجغرافية المعقدة وبين العقل البشري؛ فهو العلم والفن والتقنية المختصة بتمثيل الواقع الجغرافي على أسطح ثنائية أو ثلاثية الأبعاد (خرائط ورقية أو رقمية). لا يقتصر الكارتوغرافيا على &ldquo;الرسم&rdquo; فحسب، بل هو عملية اختيار وتلخيص ورمزية للمعلومات المكانية لجعلها قابلة للفهم والاستخدام لاتخاذ قرارات دقيقة.
+1. ما هي الكارتوغرافيا بالضبط؟
+هي عملية تحويل البيانات الخام (الإحداثيات والمساحات والأسماء) إلى لغة بصرية مفهومة. تتضمن هذه العملية عدة خطوات تقنية وفنية:" />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="2-4/ الكارتوغرافيا Cartography">
+  <meta itemprop="description" content="cartography">
+  <meta itemprop="datePublished" content="2026-04-06T20:03:24+01:00">
+  <meta itemprop="dateModified" content="2026-04-06T20:03:24+01:00">
+  <meta itemprop="wordCount" content="536">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/cartography/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="2-4/ الكارتوغرافيا Cartography">
+  <meta property="og:description" content="cartography">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-06T20:03:24+01:00">
+    <meta property="article:modified_time" content="2026-04-06T20:03:24+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="2-4/ الكارتوغرافيا Cartography">
+  <meta name="twitter:description" content="cartography">
+
+  <link rel="canonical" href="https://example.org/posts/cartography/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">2-4/ الكارتوغرافيا Cartography</h1><div class="text-xs antialiased opacity-60"><time>06‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="1--ماهية-و-معنى-cartography">1- ماهية و معنى Cartography:</h1>
+<p>يعتبر علم <strong>فن وصناعة الخرائط (Cartography)</strong> الجسر النهائي الذي يربط بين البيانات الجغرافية المعقدة وبين العقل البشري؛ فهو العلم والفن والتقنية المختصة بتمثيل الواقع الجغرافي على أسطح ثنائية أو ثلاثية الأبعاد (خرائط ورقية أو رقمية). لا يقتصر الكارتوغرافيا على &ldquo;الرسم&rdquo; فحسب، بل هو عملية اختيار وتلخيص ورمزية للمعلومات المكانية لجعلها قابلة للفهم والاستخدام لاتخاذ قرارات دقيقة.</p>
+<h3 id="1-ما-هي-الكارتوغرافيا-بالضبط">1. ما هي الكارتوغرافيا بالضبط؟</h3>
+<p>هي عملية تحويل البيانات الخام (الإحداثيات والمساحات والأسماء) إلى لغة بصرية مفهومة. تتضمن هذه العملية عدة خطوات تقنية وفنية:</p>
+<ul>
+<li>
+<p><strong>التعميم (Generalization):</strong> اختيار المعالم المهمة وحذف التفاصيل غير الضرورية لتناسب مقياس الرسم.</p>
+</li>
+<li>
+<p><strong>الترميز (Symbolization):</strong> استخدام الألوان والأشكال والخطوط لتمثيل الظواهر (مثل استخدام اللون الأحمر للمناطق المكتظة).</p>
+</li>
+<li>
+<p><strong>التصميم البصري:</strong> ترتيب العناصر (العنوان، المفتاح، سهم الشمال) لضمان توازن الخريطة وسهولة قراءتها.</p>
+</li>
+</ul>
+<h3 id="2-لمحة-تاريخية-عن-الكارتوغرافيا">2. لمحة تاريخية عن الكارتوغرافيا</h3>
+<p>تطور هذا العلم مع تطور الحضارة البشرية والحاجة للاستكشاف:</p>
+<ul>
+<li>
+<p><strong>العصور القديمة:</strong> بدأت بخرائط طينية في بابل وخرائط بردي في مصر القديمة. ثم جاء &ldquo;بطليموس&rdquo; في العصر اليوناني ليضع الأسس الرياضية الأولى للإسقاطات الجغرافية.</p>
+</li>
+<li>
+<p><strong>العصر الذهبي الإسلامي:</strong> قدم علماء مثل <strong>الإدريسي</strong> خرائط متطورة جداً (مثل خريطة &ldquo;نزهة المشتاق&rdquo;) التي كانت الأكثر دقة في العصور الوسطى، حيث دمجت بين الوصف الجغرافي والتمثيل المكاني الدقيق.</p>
+</li>
+<li>
+<p><strong>عصر الاستكشاف:</strong> شهد ظهور مسقط &ldquo;مركيتور&rdquo; الشهير الذي ساعد البحارة في الملاحة عبر المحيطات.</p>
+</li>
+<li>
+<p><strong>العصر الحديث:</strong> تحولت الكارتوغرافيا من الرسم اليدوي إلى الرسم الآلي ثم إلى &ldquo;الكارتوغرافيا الرقمية&rdquo; مع ظهور الحاسوب والأقمار الصناعية ونظم المعلومات الجغرافية (GIS).</p>
+</li>
+</ul>
+<h3 id="3-ماذا-تعني-الكارتوغرافيا-في-وقتنا-الحاضر">3. ماذا تعني الكارتوغرافيا في وقتنا الحاضر؟</h3>
+<p>في عصر البيانات الضخمة (Big Data)، لم تعد الكارتوغرافيا مجرد &ldquo;رسم ورقي&rdquo;، بل أصبحت أداة حيوية لـ <strong>&ldquo;تصور البيانات&rdquo; (Data Visualization)</strong>، وتتلخص مهمتها الحالية في:</p>
+<ul>
+<li>
+<p><strong>دعم اتخاذ القرار:</strong> الخرائط اليوم هي التي توجه سيارات الإسعاف، وتحدد مسارات الطيران، وتساعد القادة في التخطيط العسكري أو إدارة الكوارث.</p>
+</li>
+<li>
+<p><strong>تبسيط التعقيد:</strong> مع انفجار المعلومات، تعمل الكارتوغرافيا على تصفية هذه البيانات وعرضها بشكل بصري يسهل على الإنسان العادي استيعابه (مثل خرائط انتشار الأوبئة أو التغير المناخي).</p>
+</li>
+<li>
+<p><strong>التفاعلية والخرائط الذكية:</strong> لم تعد الخريطة ثابتة؛ بل أصبحت تفاعلية (Dynamic Maps) تسمح للمستخدم بالتكبير، التصغير، والضغط على المعالم للحصول على بيانات حية، وهو ما نراه في تطبيقات مثل Google Maps وخرائط الويب.</p>
+</li>
+<li>
+<p><strong>تحليل الأنماط:</strong> تساعدنا في اكتشاف &ldquo;أين تقع المشكلة؟&quot;؛ فخريطة الفقر أو الجريمة المنسقة كارتوغرافياً بشكل جيد تكشف فوراً عن الأماكن التي تحتاج لتدخل سريع، وهو ما لا تظهره الجداول الإحصائية.</p>
+</li>
+</ul>
+<h3 id="نصيحة">نصيحة:</h3>
+<p>يقول الجغرافيون دائماً: <em>&ldquo;الخريطة الجيدة هي التي تخبرك بالحقيقة بوضوح، والخريطة السيئة هي التي تضللك حتى لو كانت بياناتها صحيحة&rdquo;</em>. لذا، في QGIS، تذكر أن تصميم <strong>Layout</strong> الخريطة (العنوان، المقاييس، التنسيق) هو اللمسة الاحترافية التي تجعل مجهودك العلمي يصل للآخرين بنجاح.</p>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<h3 id="المطلوب-هذه-المرة-سيكون-رابطا-واحدا-فقط-لكورس-قصير-موجود-على-اليوتيوب-يخص-موضوع-الدرس-الهدف-من-هذا-هو-متابعة-المقاطع-و-محاولة-فهم-و-حتى-تقليد-ما-يتم-القيام-بهالهدف-هو-التعود-على-البدء-بإنشاء-خرائط-و-العمل-عليها">المطلوب هذه المرة سيكون رابطا واحدا فقط لكورس قصير موجود على اليوتيوب يخص موضوع الدرس، الهدف من هذا هو متابعة المقاطع و محاولة فهم و حتى تقليد ما يتم القيام به&hellip;الهدف هو التعود على البدء بإنشاء خرائط و العمل عليها</h3>
+<p>1- <a href="https://www.youtube.com/watch?v=VKtXh1XbGEU&amp;list=PL4nu5ykPWfIXu4ssyr5R5VvwGDSH1WUoJ">إضغط هنا</a> لمشاهدة الكورس و تذكر مرة أخرى أن تقليد ما يتم القيام به و التطبيق العملي هما الوسيلة الأفضل للتعلم، و أيضا أنت حاليا في مرحلة جيدة من الفهم حول أساسيات GIS و مصطلحاتها و كذا بعض أساسيات العمل على QGIS لذا في حال عدم فهم أي شيء سيكون من الجيد البحث في Google و يوتيوب عن الشيء الذي لم تفهمه و سيكون هناك الكثير من المصادر التي تشرح مختلف المفاهيم&hellip;أو تواصل معنا في حال عدم فهم جزئية ما لطلب المساعدة</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/final_project/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>2-5/ المشروع النهائي للفصل</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/osm/"
+      ><span>2-3/ كيفية استخدام Open Street Maps</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>1- تعريف GIS - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1- تعريف GIS:
+
+نظم المعلومات الجغرافية (GIS): المفهوم والأهمية
+تُعد نظم المعلومات الجغرافية (GIS) منظومة حاسوبية متكاملة مصممة لإدارة البيانات المكانية والوصفية. وتعتمد هذه التقنية على دورة حياة تبدأ من جمع البيانات وتخزينها، مروراً بمعالجتها وتحليلها، وصولاً إلى عرضها وتوزيعها لدعم اتخاذ القرارات الاستراتيجية.
+آليات العمل والوظائف
+يعتمد النظام على دمج نوعين من البيانات:
+
+
+البيانات المكانية: مثل الخرائط، الصور الجوية، والمرئيات الفضائية.
+
+
+البيانات الوصفية: وتتمثل في الجداول، الأسماء، والإحصائيات المرتبطة بالمواقع." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="1- تعريف GIS">
+  <meta itemprop="description" content="1-1/تعريف GIS">
+  <meta itemprop="datePublished" content="2026-04-04T19:08:18+01:00">
+  <meta itemprop="dateModified" content="2026-04-04T19:08:18+01:00">
+  <meta itemprop="wordCount" content="1416">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/general_gis_basics/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="1- تعريف GIS">
+  <meta property="og:description" content="1-1/تعريف GIS">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T19:08:18+01:00">
+    <meta property="article:modified_time" content="2026-04-04T19:08:18+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1- تعريف GIS">
+  <meta name="twitter:description" content="1-1/تعريف GIS">
+
+  <link rel="canonical" href="https://example.org/posts/general_gis_basics/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">1- تعريف GIS</h1><div class="text-xs antialiased opacity-60"><time>04‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="1--تعريف-gis">1- تعريف GIS:</h1>
+<hr>
+<h2 id="نظم-المعلومات-الجغرافية-gis-المفهوم-والأهمية">نظم المعلومات الجغرافية (GIS): المفهوم والأهمية</h2>
+<p>تُعد <strong>نظم المعلومات الجغرافية (GIS)</strong> منظومة حاسوبية متكاملة مصممة لإدارة البيانات المكانية والوصفية. وتعتمد هذه التقنية على دورة حياة تبدأ من <strong>جمع البيانات</strong> وتخزينها، مروراً <strong>بمعالجتها وتحليلها</strong>، وصولاً إلى <strong>عرضها وتوزيعها</strong> لدعم اتخاذ القرارات الاستراتيجية.</p>
+<h3 id="آليات-العمل-والوظائف">آليات العمل والوظائف</h3>
+<p>يعتمد النظام على دمج نوعين من البيانات:</p>
+<ol>
+<li>
+<p><strong>البيانات المكانية:</strong> مثل الخرائط، الصور الجوية، والمرئيات الفضائية.</p>
+</li>
+<li>
+<p><strong>البيانات الوصفية:</strong> وتتمثل في الجداول، الأسماء، والإحصائيات المرتبطة بالمواقع.</p>
+</li>
+</ol>
+<p>ويتم تنظيم هذه المعلومات عبر مفهوم <strong>الطبقات (Layers)</strong>، حيث تُوضع كل فئة من المعلومات في طبقة مستقلة (مثل طبقة المباني، طبقة شبكات المياه، وطبقة التربة)، مما يسهل عملية استرجاعها، تنقيحها من الأخطاء، وإجراء التحليلات المكانية والإحصائية عليها، ثم إخراجها في شكل خرائط تفاعلية أو تقارير ورسومات بيانية.</p>
+<h3 id="مجالات-التطبيق-ودعم-القرار">مجالات التطبيق ودعم القرار</h3>
+<p>تساهم هذه النظم بفاعلية في تخطيط المدن، التوسع السكاني، وتطوير البنية التحتية، بالإضافة إلى دورها الحيوي في القطاع الزراعي، حيث تجيب على تساؤلات جوهرية تشمل:</p>
+<ul>
+<li>
+<p><strong>التحديد والقياس:</strong> تحديد الأنماط الزراعية والمحاصيل المناسبة، وحساب مساحات الوحدات الزراعية وأقطار أنابيب الري.</p>
+</li>
+<li>
+<p><strong>الموقع والاشتراطات:</strong> تحديد مواقع جغرافية بدقة، أو استخراج بيانات بناءً على شروط محددة (مثل حصر الأنابيب ذات قطر معين في منطقة ما).</p>
+</li>
+<li>
+<p><strong>التتبع والنمذجة:</strong> رصد المتغيرات عبر الزمن (مثل ملوحة التربة)، ودراسة التوزيع النمطي للعلاقة بين الموارد والسكان، بالإضافة إلى وضع سيناريوهات افتراضية للمشاريع الهيدرولوجية.</p>
+</li>
+</ul>
+<hr>
+<h1 id="2--تاريخ-gis-">2- تاريخ GIS :</h1>
+<hr>
+<h2 id="السردية-التاريخية-المعمقة-لنظم-المعلومات-الجغرافية-gis">السردية التاريخية المعمقة لنظم المعلومات الجغرافية (GIS)</h2>
+<h3 id="أولا-بزوغ-الفكرة---التحليل-المكاني-قبل-الحوسبة">أولاً: بزوغ الفكرة - التحليل المكاني قبل الحوسبة</h3>
+<p>لم تكن نظم المعلومات الجغرافية وليدة الصدفة التقنية، بل كانت استجابة لحاجة البشر لفهم العلاقة بين المكان والحدث.</p>
+<ul>
+<li>
+<p><strong>ثورة جون سنو (1854):</strong> اعتُبرت خريطة الكوليرا في لندن نقطة تحول جوهرية؛ حيث أثبت &ldquo;سنو&rdquo; أن وضع البيانات الوصفية (حالات الوفاة) فوق مخطط مكاني (شوارع لندن ومواقع مضخات المياه) يمكن أن يكشف عن أنماط غير مرئية بالعين المجردة. كانت هذه هي المرة الأولى التي يُستخدم فيها &ldquo;التحليل المكاني&rdquo; لحل مشكلة صحية عامة.</p>
+</li>
+<li>
+<p><strong>الخرائط الطبقية اليدوية:</strong> في أوائل القرن العشرين، بدأ الجغرافيون باستخدام أوراق شفافة لرسم طبقات مختلفة من البيانات (مثل الغطاء النباتي فوق التضاريس)، وهي الطريقة التي مهدت تقنياً لمفهوم الـ <strong>Layers</strong> المعمول به حالياً.</p>
+</li>
+</ul>
+<h3 id="ثانيا-عصر-الريادة-والأنظمة-القومية-الستينيات">ثانياً: عصر الريادة والأنظمة القومية (الستينيات)</h3>
+<p>مع تطور العتاد الحاسوبي بفضل الأبحاث العسكرية والنووية، بدأت محاولات أتمتة الخرائط:</p>
+<ul>
+<li>
+<p><strong>المشروع الكندي الرائد (1962):</strong> أطلق &ldquo;روجر توملينسون&rdquo; (الذي يُعرف بأب نظم المعلومات الجغرافية) نظام <strong>CGIS</strong> في أوتاوا. كان الهدف منه جرد الموارد الطبيعية في كندا على نطاق واسع (1:50,000). تميز هذا النظام بقدرته على تخزين البيانات وربطها بإحداثيات حقيقية، مما جعله أول نظام &ldquo;عملي&rdquo; متكامل.</p>
+</li>
+<li>
+<p><strong>مختبر هارفارد للرسوم الحاسوبية (1964):</strong> أسس &ldquo;هوارد فيشر&rdquo; مختبراً أنتج برنامج <strong>SYMAP</strong>، الذي سمح لأول مرة بإنتاج خرائط وتوزيعات إحصائية عبر الحاسب. لم يقتصر دور هذا المختبر على البرمجة، بل صار مركزاً أكاديمياً خرّج الرواد الذين أسسوا لاحقاً كبرى شركات الـ GIS في العالم.</p>
+</li>
+</ul>
+<h3 id="ثالثا-المأسسة-والانتشار-في-الدول-المتقدمة-السبعينيات">ثالثاً: المأسسة والانتشار في الدول المتقدمة (السبعينيات)</h3>
+<p>شهدت هذه الحقبة انتقال الـ GIS من مجرد تجارب إلى مؤسسات حكومية منظمة:</p>
+<ul>
+<li>
+<p><strong>إدارة الأراضي والموارد:</strong> تبنت ولايات أمريكية مثل نيويورك (1967) ومنيسوتا (1969) أنظمة لإدارة أراضيها ومواردها الطبيعية. كانت هذه المشاريع تتطلب ميزانيات ضخمة، لذا اقتصرت في بدايتها على القوى العظمى (الولايات المتحدة، كندا، بريطانيا، وأستراليا).</p>
+</li>
+<li>
+<p><strong>الاعتراف الدولي (1970):</strong> عُقد أول مؤتمر دولي متخصص في الـ GIS بدعم من اليونسكو، مما منح العلم صبغة رسمية. وفي منتصف هذا العقد، تم الاستقرار على مسمى <strong>&ldquo;نظم المعلومات الجغرافية&rdquo;</strong> ليكون المظلة التي تجمع كافة البرمجيات والتقنيات المتفرقة.</p>
+</li>
+</ul>
+<h3 id="رابعا-الحقبة-التجارية-وظهور-الجيل-الثاني-الثمانينيات">رابعاً: الحقبة التجارية وظهور الجيل الثاني (الثمانينيات)</h3>
+<p>تحول الـ GIS في الثمانينيات من أداة حكومية معقدة إلى منتج تجاري متاح:</p>
+<ul>
+<li>
+<p><strong>المنافسة والابتكار:</strong> دخلت الشركات الخاصة سوق البرمجيات، مما أدى لظهور أدوات تحليلية أكثر قوة وواجهات مستخدم أفضل.</p>
+</li>
+<li>
+<p><strong>مجتمع المعلومات:</strong> ظهرت &ldquo;جمعية نظم المعلومات الحضرية والإقليمية&rdquo; (URISA)، وتأسست الدوريات العلمية والمؤتمرات الدورية، مما خلق شبكة تواصل عالمية بين المطورين والمستخدمين، وسمح بتبادل الخبرات التقنية بفعالية.</p>
+</li>
+</ul>
+<h3 id="خامسا-الثورة-الرقمية-والديمقراطية-المعلوماتية-التسعينيات---مطلع-القرن-21">خامساً: الثورة الرقمية والديمقراطية المعلوماتية (التسعينيات - مطلع القرن 21)</h3>
+<p>شهدت هذه المرحلة &ldquo;انفجاراً&rdquo; في استخدام الـ GIS لعدة أسباب:</p>
+<ul>
+<li>
+<p><strong>انخفاض التكلفة:</strong> مع انتشار الحواسيب الشخصية (PCs) وأنظمة &ldquo;يونيكس&rdquo;، لم يعد امتلاك نظام GIS يتطلب ميزانية دولة، بل أصبح متاحاً للشركات المتوسطة وحتى الأفراد.</p>
+</li>
+<li>
+<p><strong>الاستدامة والبيئة:</strong> زاد اهتمام الحكومات بحماية البيئة ومواجهة التغير المناخي، وهي ملفات تعتمد كلياً على البيانات المتشابكة التي لا يفك شفرتها سوى الـ GIS.</p>
+</li>
+<li>
+<p><strong>عصر الإنترنت والمعايير المفتوحة:</strong> بنهاية التسعينيات، تم الاتفاق على صيغ موحدة لنقل البيانات الجغرافية، مما سمح بظهور &ldquo;الخرائط التفاعلية عبر الويب&rdquo; والبرمجيات مفتوحة المصدر، لينتقل الـ GIS من المختبرات المغلقة إلى متناول يد الجميع عبر الإنترنت.</p>
+</li>
+</ul>
+<hr>
+<h1 id="3--تطبيقات-و-استخدامات-نظام-gis">3- تطبيقات و استخدامات نظام GIS:</h1>
+<hr>
+<h2 id="الدليل-الشامل-لاستخدامات-نظم-المعلومات-الجغرافية-gis">الدليل الشامل لاستخدامات نظم المعلومات الجغرافية (GIS)</h2>
+<p>تتجاوز نظم المعلومات الجغرافية كونها مجرد أداة لرسم الخرائط، لتصبح نظاماً ذكياً لإدارة الموارد واتخاذ القرارات في مختلف القطاعات الحيوية.</p>
+<h3 id="1-إدارة-الأزمات-والخدمات-الطبية-الطارئة">1. إدارة الأزمات والخدمات الطبية الطارئة</h3>
+<p>تعتبر الـ GIS حجر الزاوية في الاستجابة السريعة للكوارث التي غالباً ما تكون ذات طبيعة مكانية (مثل الزلازل والفيضانات).</p>
+<ul>
+<li>
+<p><strong>تحليل المسارات:</strong> تتيح التقنية تحديد أقصر وأنسب المسارات بين النقاط المختلفة، مما يسهل صيانة الشبكات وتوفير الجهد.</p>
+</li>
+<li>
+<p><strong>سرعة الاستجابة الطبية:</strong> تساعد في تحديد أقرب وحدة إسعاف لموقع البلاغ ورسم الطرق البديلة للوصول إليه.</p>
+</li>
+<li>
+<p><strong>التنبؤ بالأوبئة:</strong> يمكن للنظام تحليل البيانات المخزنة لمعرفة سرعة انتشار العدوى قبل وقوعها فعلياً، مما يدعم خطط الوقاية.</p>
+</li>
+</ul>
+<h3 id="2-التخطيط-العمراني-وتطوير-البنية-التحتية">2. التخطيط العمراني وتطوير البنية التحتية</h3>
+<p>يساهم النظام في تحويل المدن إلى بيئات أكثر تنظيماً من خلال:</p>
+<ul>
+<li>
+<p><strong>تقييم الخدمات:</strong> مراقبة أداء الخدمات التعليمية، الصحية، والأمنية لتحديد المناطق المحرومة وإعادة توزيع الخدمات فيها.</p>
+</li>
+<li>
+<p><strong>الحد من العشوائيات:</strong> بناء نماذج رياضية لتحديد اتجاهات النمو العمراني والسيطرة على المناطق غير المخططة.</p>
+</li>
+<li>
+<p><strong>النمذجة التضاريسية:</strong> إدخال الخرائط الكنتورية لاستنتاج شكل سطح الأرض، وحساب كميات الحفر والردم، وتحديد مسارات السيول والميول الأرضية.</p>
+</li>
+</ul>
+<h3 id="3-حماية-البيئة-وإدارة-الموارد-الطبيعية">3. حماية البيئة وإدارة الموارد الطبيعية</h3>
+<p>تعد الـ GIS أداة رقابية وبيئية من الدرجة الأولى:</p>
+<ul>
+<li>
+<p><strong>تتبع التغيرات البيئية:</strong> دراسة الخصائص الفيزيائية والكيميائية للبيئات المختلفة ومراقبة التغيرات عبر مقارنة الصور والخرائط التاريخية.</p>
+</li>
+<li>
+<p><strong>خرائط الموارد:</strong> إنتاج خرائط دقيقة لمواقع تجمع الموارد الطبيعية مثل المياه والبترول والمعادن، وتوقع استخدامات الأراضي المستقبلية.</p>
+</li>
+</ul>
+<h3 id="4-الدراسات-الاقتصادية-والاجتماعية">4. الدراسات الاقتصادية والاجتماعية</h3>
+<p>تساعد هذه النظم الخبراء في استنتاج &ldquo;مؤشرات التنمية&rdquo; من خلال تحليل الخصائص الاجتماعية والاقتصادية لمنطقة معينة بناءً على معايير محددة، مما يوجه قرارات التطوير نحو المسار الصحيح.</p>
+<h3 id="5-الكفاءة-المؤسسية-واتخاذ-القرار">5. الكفاءة المؤسسية واتخاذ القرار</h3>
+<p>تمثل الـ GIS نقلة نوعية في أسلوب الإدارة داخل الهيئات:</p>
+<ul>
+<li>
+<p><strong>تحسين الإنتاجية:</strong> تتيح بناء قاعدة بيانات موحدة تمنع تكرار جمع البيانات، حيث يتم جمعها مرة واحدة واستخدامها عدة مرات من قبل أقسام مختلفة، مما يرفع الكفاءة الكلية.</p>
+</li>
+<li>
+<p><strong>دعم القرار الذكي:</strong> لا يتخذ النظام القرار نيابة عن الإنسان، ولكنه يوفر معلومات دقيقة وكاملة (بيانات أفضل لقرار أفضل).</p>
+</li>
+<li>
+<p><strong>الاستفسار المكاني:</strong> يمكن للمستخدم وضع معايير محددة (مثل: البحث عن أرض تبعد مسافة معينة عن الطريق الرئيسي، وبسعر محدد، وبعيدة عن التلوث)، ليقوم النظام بفلترة الخيارات وترك حرية الاختيار النهائي لمتخذ القرار.</p>
+</li>
+</ul>
+<h3 id="6-الجيل-الجديد-من-بناء-الخرائط">6. الجيل الجديد من بناء الخرائط</h3>
+<p>تتميز عملية بناء الخرائط في الـ GIS بمرونة فائقة مقارنة بالطرق التقليدية:</p>
+<ul>
+<li>
+<p><strong>التحول الرقمي:</strong> تبدأ العملية بتحويل الخرائط الورقية إلى رقمية وتحديثها بواسطة صور الأقمار الصناعية.</p>
+</li>
+<li>
+<p><strong>الترميز الجغرافي:</strong> يتم ربط البيانات بمواقعها الجغرافية واستخدام رموز مفهومة (مثل رموز الآثار أو المزارع) لتوضيح الخصائص على المنتج النهائي.</p>
+</li>
+</ul>
+<hr>
+<h1 id="4--مميزات-نظام-gis">4- مميزات نظام GIS:</h1>
+<hr>
+<h2 id="المميزات-الاستراتيجية-والتقنية-لنظم-المعلومات-الجغرافية-gis">المميزات الاستراتيجية والتقنية لنظم المعلومات الجغرافية (GIS)</h2>
+<p>تتعدى مميزات نظم المعلومات الجغرافية مجرد &ldquo;الرقمية&rdquo;، لتصل إلى إعادة هيكلة طريقة تفكير المؤسسات في إدارة مشاريعها ومواردها. إليك تفصيل لهذه المميزات:</p>
+<h3 id="1-الكفاءة-التشغيلية-وسرعة-الوصول-للمعلومات">1. الكفاءة التشغيلية وسرعة الوصول للمعلومات</h3>
+<ul>
+<li>
+<p><strong>الفعالية في استرجاع البيانات:</strong> يوفر النظام سرعة فائقة في الوصول إلى كميات ضخمة من المعلومات الجغرافية والوصفية بفاعلية عالية، مما يختصر زمن البحث التقليدي.</p>
+</li>
+<li>
+<p><strong>تحسين الإنتاجية المؤسسية:</strong> من خلال بناء قاعدة بيانات موحدة، يتم جمع البيانات مرة واحدة واستخدامها عدة مرات من قبل أقسام مختلفة، مما يمنع التكرار ويرفع الكفاءة الكلية للهيئة.</p>
+</li>
+</ul>
+<h3 id="2-تكامل-البيانات-والتوثيق-الموحد">2. تكامل البيانات والتوثيق الموحد</h3>
+<ul>
+<li>
+<p><strong>الدمج المعلوماتي الفريد:</strong> يتميز النظام بالقدرة على دمج المعلومات المكانية (الخرائط) والمعلومات الوصفية (الجداول والأسماء) في قاعدة معلوماتية واحدة مترابطة.</p>
+</li>
+<li>
+<p><strong>التوثيق وفق مواصفات موحدة:</strong> يضمن النظام توثيق وتأكيد البيانات والمعلومات بمواصفات قياسية موحدة، مما يسهل تبادلها بين الجهات المختلفة ويضمن دقتها.</p>
+</li>
+</ul>
+<h3 id="3-القدرات-التحليلية-والاستعلامية-المتقدمة">3. القدرات التحليلية والاستعلامية المتقدمة</h3>
+<ul>
+<li>
+<p><strong>التحليل المكاني المعمق:</strong> يمتلك النظام قدرة تحليلية مكانية عالية تسمح بفهم العلاقات والأنماط بين الظواهر الجغرافية المختلفة.</p>
+</li>
+<li>
+<p><strong>الاستعلام المزدوج:</strong> القدرة على الإجابة على الاستفسارات المعقدة، سواء كانت خاصة بالموقع (أين يقع؟) أو بالمعلومة الوصفية (ما هي خصائص هذا الموقع؟).</p>
+</li>
+<li>
+<p><strong>التمثيل المرئي:</strong> يوفر أدوات متطورة للتمثيل المرئي للمعلومات المكانية، مما يحول البيانات الجامدة إلى خرائط ورسومات بيانية سهلة الفهم.</p>
+</li>
+</ul>
+<h3 id="4-دعم-اتخاذ-القرار-والتنسيق-المشترك">4. دعم اتخاذ القرار والتنسيق المشترك</h3>
+<ul>
+<li>
+<p><strong>اتخاذ القرارات الرشيدة:</strong> يساعد في اتخاذ أفضل القرارات في أسرع وقت ممكن، بناءً على بيانات دقيقة وشاملة تُعرض أمام متخذ القرار.</p>
+</li>
+<li>
+<p><strong>التنسيق قبل التنفيذ:</strong> يتيح النظام التنسيق بين المعلومات والجهات ذات العلاقة قبل اتخاذ القرار النهائي، مما يضمن توافق المشاريع مع المخططات العامة.</p>
+</li>
+<li>
+<p><strong>نشر المعرفة:</strong> يسهل عملية نشر المعلومات الجغرافية لعدد أكبر من المستفيدين عبر الشبكات والمنصات الإلكترونية.</p>
+</li>
+</ul>
+<h3 id="5-التخطيط-المستقبلي-والمحاكاة-simulation">5. التخطيط المستقبلي والمحاكاة (Simulation)</h3>
+<ul>
+<li>
+<p><strong>دعم المشاريع التوسعية:</strong> يلعب دوراً محورياً في تخطيط المشاريع الجديدة والتوسعية عبر تحليل النطاقات العمرانية والاحتياجات المستقبلية.</p>
+</li>
+<li>
+<p><strong>المحاكاة الافتراضية:</strong> يتيح النظام تمثيل ومحاكاة الافتراضات والمشاريع التخطيطية الجديدة، مما يسمح بدراسة النتائج والآثار المترتبة عليها قبل البدء بالتطبيق الفعلي على أرض الواقع، وهو ما يقلل من المخاطر والتكاليف.</p>
+</li>
+</ul>
+<hr>
+<pre tabindex="0"><code class="language-Assignment:" data-lang="Assignment:">
+there are no assignments for this lesson
+</code></pre></section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/spatial_attribute_data/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>1-2/ البيانات الوصفية و البيانات المكانية</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/introduction_to_gis/"
+      ><span>مقدمة إلى GIS</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>مقدمة إلى GIS - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="أهلاً بكم في هذه الدورة المركزة والمصممة خصيصاً لأخذكم من الصفر إلى مرحلة إنتاج خرائط وتحليلات مكانية احترافية. سنعتمد في هذه الرحلة على برنامج QGIS المجاني ومفتوح المصدر.
+إليكم الخطة التفصيلية للأسابيع الأربعة القادمة:
+
+🟢 المرحلة الأولى: فهم الأساسيات
+الهدف: بناء قاعدة نظرية صلبة لتمكينك من شرح المفاهيم بثقة.
+في هذا الأسبوع سنتعرف على:
+
+ما هو GIS؟ وكيف يدمج بين الخريطة وقواعد البيانات.
+أنواع البيانات: الفرق بين البيانات المكانية (Spatial) والوصفية (Attribute).
+النماذج البيانية:
+
+البيانات المتجهة (Vector): النقاط، الخطوط، والمساحات.
+البيانات النقطية (Raster): الصور الجوية والبيانات الشبكية.
+
+
+أنظمة الإحداثيات (CRS): كيف نسقط الأرض الكروية على لوحة مسطحة.
+مفهوم الطبقات (Layers): كيف تتراكم المعلومات فوق بعضها لتعطي صورة كاملة.
+
+
+🔵 المرحلة الثانية: التطبيق العملي على QGIS
+الهدف: كسر حاجز الخوف من البرنامج وإنتاج خريطتك الأولى." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="مقدمة إلى GIS">
+  <meta itemprop="description" content="خارطة طريق شاملة لتعلم أساسيات نظم المعلومات الجغرافية والتحليل المكاني باستخدام QGIS.">
+  <meta itemprop="datePublished" content="2026-04-04T17:40:04+01:00">
+  <meta itemprop="dateModified" content="2026-04-04T17:40:04+01:00">
+  <meta itemprop="wordCount" content="202">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/introduction_to_gis/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="مقدمة إلى GIS">
+  <meta property="og:description" content="خارطة طريق شاملة لتعلم أساسيات نظم المعلومات الجغرافية والتحليل المكاني باستخدام QGIS.">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T17:40:04+01:00">
+    <meta property="article:modified_time" content="2026-04-04T17:40:04+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="مقدمة إلى GIS">
+  <meta name="twitter:description" content="خارطة طريق شاملة لتعلم أساسيات نظم المعلومات الجغرافية والتحليل المكاني باستخدام QGIS.">
+
+  <link rel="canonical" href="https://example.org/posts/introduction_to_gis/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">مقدمة إلى GIS</h1><div class="text-xs antialiased opacity-60"><time>04‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><p>أهلاً بكم في هذه الدورة المركزة والمصممة خصيصاً لأخذكم من الصفر إلى مرحلة إنتاج خرائط وتحليلات مكانية احترافية. سنعتمد في هذه الرحلة على برنامج <strong>QGIS</strong> المجاني ومفتوح المصدر.</p>
+<p>إليكم الخطة التفصيلية للأسابيع الأربعة القادمة:</p>
+<hr>
+<h2 id="-المرحلة-الأولى-فهم-الأساسيات">🟢 المرحلة الأولى: فهم الأساسيات</h2>
+<p><strong>الهدف:</strong> بناء قاعدة نظرية صلبة لتمكينك من شرح المفاهيم بثقة.</p>
+<p>في هذا الأسبوع سنتعرف على:</p>
+<ol>
+<li><strong>ما هو GIS؟</strong> وكيف يدمج بين الخريطة وقواعد البيانات.</li>
+<li><strong>أنواع البيانات:</strong> الفرق بين البيانات المكانية (Spatial) والوصفية (Attribute).</li>
+<li><strong>النماذج البيانية:</strong>
+<ul>
+<li>البيانات المتجهة (<strong>Vector</strong>): النقاط، الخطوط، والمساحات.</li>
+<li>البيانات النقطية (<strong>Raster</strong>): الصور الجوية والبيانات الشبكية.</li>
+</ul>
+</li>
+<li><strong>أنظمة الإحداثيات (CRS):</strong> كيف نسقط الأرض الكروية على لوحة مسطحة.</li>
+<li><strong>مفهوم الطبقات (Layers):</strong> كيف تتراكم المعلومات فوق بعضها لتعطي صورة كاملة.</li>
+</ol>
+<hr>
+<h2 id="-المرحلة-الثانية-التطبيق-العملي-على-qgis">🔵 المرحلة الثانية: التطبيق العملي على QGIS</h2>
+<p><strong>الهدف:</strong> كسر حاجز الخوف من البرنامج وإنتاج خريطتك الأولى.</p>
+<p>سنتعلم المهارات التقنية التالية:</p>
+<ul>
+<li>تثبيت برنامج <strong>QGIS</strong> وإعداد بيئة العمل.</li>
+<li>التعامل مع ملفات <strong>Shapefile</strong> وإضافة البيانات من OpenStreetMap.</li>
+<li><strong>التنسيق البصري (Symbology):</strong> تغيير الألوان والرموز لجعل الخريطة مقروءة.</li>
+<li><strong>تصميم الخرائط (Layout):</strong> إضافة مقياس الرسم، سهم الشمال، ومفتاح الخريطة وتصديرها كـ PDF.</li>
+</ul>
+<blockquote>
+<p><strong>في نهاية هذه الدورة:</strong> لن تكون مجرد مستخدم لبرنامج خرائط، بل ستكون قادراً على الإجابة على السؤال الجوهري: &ldquo;لماذا تعتبر نظم المعلومات الجغرافية حجر الزاوية في الجغرافيا الحديثة؟&rdquo;</p>
+</blockquote>
+<p><strong>هل أنتم مستعدون للبدء؟</strong> تابعوا المنشورات القادمة لكل مرحلة بالتفصيل.</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/general_gis_basics/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>1- تعريف GIS</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

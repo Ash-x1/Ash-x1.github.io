@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>تجربة on دورة لتعلم أساسيات GIS</title>
+    <link>http://localhost:1313/tags/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</link>
+    <description>Recent content in تجربة on دورة لتعلم أساسيات GIS</description>
+    <generator>Hugo</generator>
+    <language>ar-dz</language>
+    <lastBuildDate>Sat, 04 Apr 2026 16:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>تجربة المنشور الأول على Hugo</title>
+      <link>http://localhost:1313/posts/example/</link>
+      <pubDate>Sat, 04 Apr 2026 16:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/posts/example/</guid>
+      <description>&lt;h2 id=&#34;أهلا-بك-في-عالم-hugo-&#34;&gt;أهلاً بك في عالم Hugo! 👋&lt;/h2&gt;&#xA;&lt;p&gt;هذا المنشور هو اختبار للتأكد من أن كل شيء يعمل بشكل صحيح. يدعم &lt;strong&gt;Hugo&lt;/strong&gt; لغة Markdown بشكل ممتاز وسريع جداً.&lt;/p&gt;&#xA;&lt;h3 id=&#34;اختبار-التنسيقات-الأساسية&#34;&gt;اختبار التنسيقات الأساسية&lt;/h3&gt;&#xA;&lt;p&gt;يمكنك استخدام التنسيقات التالية في كتابة محتواك:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;القوائم المرقمة:&lt;/strong&gt; لتنظيم الخطوات.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;القوائم النقطية:&lt;/strong&gt; لعرض الميزات.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;الروابط:&lt;/strong&gt; &lt;a href=&#34;https://gohugo.io&#34;&gt;اضغط هنا لزيارة موقع Hugo الرسمي&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;اختبار-الأكواد-البرمجية-code-blocks&#34;&gt;اختبار الأكواد البرمجية (Code Blocks)&lt;/h3&gt;&#xA;&lt;p&gt;بما أنك قمت بإضافة &lt;code&gt;submodule&lt;/code&gt; قبل قليل، إليك كيفية التأكد من حالة المستودعات الفرعية:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# لعرض حالة المستودعات الفرعية&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule status&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>تجربة المنشور الثاني على Hugo</title>
+      <link>http://localhost:1313/posts/example2/</link>
+      <pubDate>Sat, 04 Apr 2026 16:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/posts/example2/</guid>
+      <description>&lt;h2 id=&#34;أهلا-بك-في-عالم-hugo-&#34;&gt;أهلاً بك في عالم Hugo! 👋&lt;/h2&gt;&#xA;&lt;p&gt;هذا المنشور هو اختبار للتأكد من أن كل شيء يعمل بشكل صحيح. يدعم &lt;strong&gt;Hugo&lt;/strong&gt; لغة Markdown بشكل ممتاز وسريع جداً.&lt;/p&gt;&#xA;&lt;h2 id=&#34;هذه-صورة&#34;&gt;هذه صورة&lt;/h2&gt;&#xA;&lt;p&gt;[/assets/29.jpeg]&#xA;[[/assets/29.jpeg]]&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/29.jpeg&#34; alt=&#34;هذه صورة&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;اختبار-التنسيقات-الأساسية&#34;&gt;اختبار التنسيقات الأساسية&lt;/h3&gt;&#xA;&lt;p&gt;يمكنك استخدام التنسيقات التالية في كتابة محتواك:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;القوائم المرقمة:&lt;/strong&gt; لتنظيم الخطوات.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;القوائم النقطية:&lt;/strong&gt; لعرض الميزات.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;الروابط:&lt;/strong&gt; &lt;a href=&#34;https://gohugo.io&#34;&gt;اضغط هنا لزيارة موقع Hugo الرسمي&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;اختبار-الأكواد-البرمجية-code-blocks&#34;&gt;اختبار الأكواد البرمجية (Code Blocks)&lt;/h3&gt;&#xA;&lt;p&gt;بما أنك قمت بإضافة &lt;code&gt;submodule&lt;/code&gt; قبل قليل، إليك كيفية التأكد من حالة المستودعات الفرعية:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

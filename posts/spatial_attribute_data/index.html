@@ -1,0 +1,478 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="ar-dz"
+  dir="rtl"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>1-2/ البيانات الوصفية و البيانات المكانية - دورة لتعلم أساسيات GIS</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1- تعريف البيانات المكانية و البيانات الوصفية:
+
+فهم بيانات الـ GIS (المكانية والوصفية)
+في هذا الدرس، سننتقل من المفهوم العام لنظم المعلومات الجغرافية إلى المحرك الحقيقي الذي يشغلها. لكي يتمكن الحاسوب من فهم العالم الحقيقي، فإنه يقسم المعلومة الجغرافية إلى نوعين من البيانات يكمل كل منهما الآخر:
+1. البيانات المكانية (Spatial Data)
+هي الجانب &ldquo;الهندسي&rdquo; للمعلومة، وهي التي تخبرنا &ldquo;أين&rdquo; يقع المعلم على سطح الأرض.
+
+
+يتم تمثيلها من خلال إحداثيات رياضية (X, Y) أو (Latitude, Longitude)." />
+  <meta name="author" content="Ash" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://example.org/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://example.org/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://example.org/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.160.0">
+  <meta itemprop="name" content="1-2/ البيانات الوصفية و البيانات المكانية">
+  <meta itemprop="description" content="البيانات المكانية (Spatial) والوصفية (Attribute)">
+  <meta itemprop="datePublished" content="2026-04-04T19:35:39+01:00">
+  <meta itemprop="dateModified" content="2026-04-04T19:35:39+01:00">
+  <meta itemprop="wordCount" content="1264">
+  <meta itemprop="keywords" content="GIS,QGIS,جغرافيا,تعلم"><meta property="og:url" content="https://example.org/posts/spatial_attribute_data/">
+  <meta property="og:site_name" content="دورة لتعلم أساسيات GIS">
+  <meta property="og:title" content="1-2/ البيانات الوصفية و البيانات المكانية">
+  <meta property="og:description" content="البيانات المكانية (Spatial) والوصفية (Attribute)">
+  <meta property="og:locale" content="ar_dz">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-04T19:35:39+01:00">
+    <meta property="article:modified_time" content="2026-04-04T19:35:39+01:00">
+    <meta property="article:tag" content="GIS">
+    <meta property="article:tag" content="QGIS">
+    <meta property="article:tag" content="جغرافيا">
+    <meta property="article:tag" content="تعلم">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1-2/ البيانات الوصفية و البيانات المكانية">
+  <meta name="twitter:description" content="البيانات المكانية (Spatial) والوصفية (Attribute)">
+
+  <link rel="canonical" href="https://example.org/posts/spatial_attribute_data/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://example.org/"
+      >دورة لتعلم أساسيات GIS</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">1-2/ البيانات الوصفية و البيانات المكانية</h1><div class="text-xs antialiased opacity-60"><time>04‏/04‏/2026</time><span class="mx-1">&middot;</span>
+      <span>Ash</span></div></header>
+
+  <section><h1 id="1--تعريف-البيانات-المكانية-و-البيانات-الوصفية">1- تعريف البيانات المكانية و البيانات الوصفية:</h1>
+<hr>
+<h1 id="فهم-بيانات-الـ-gis-المكانية-والوصفية">فهم بيانات الـ GIS (المكانية والوصفية)</h1>
+<p>في هذا الدرس، سننتقل من المفهوم العام لنظم المعلومات الجغرافية إلى المحرك الحقيقي الذي يشغلها. لكي يتمكن الحاسوب من فهم العالم الحقيقي، فإنه يقسم المعلومة الجغرافية إلى نوعين من البيانات يكمل كل منهما الآخر:</p>
+<h3 id="1-البيانات-المكانية-spatial-data">1. البيانات المكانية (Spatial Data)</h3>
+<p>هي الجانب &ldquo;الهندسي&rdquo; للمعلومة، وهي التي تخبرنا <strong>&ldquo;أين&rdquo;</strong> يقع المعلم على سطح الأرض.</p>
+<ul>
+<li>
+<p>يتم تمثيلها من خلال إحداثيات رياضية (X, Y) أو (Latitude, Longitude).</p>
+</li>
+<li>
+<p>تأخذ أشكالاً برمجية محددة مثل <strong>النقطة</strong> (Point) لتمثيل موقع، <strong>الخط</strong> (Line) لتمثيل طريق، أو <strong>المضلع</strong> (Polygon) لتمثيل مساحة غابة أو حي سكني.</p>
+</li>
+</ul>
+<h3 id="2-البيانات-الوصفية-attribute-data">2. البيانات الوصفية (Attribute Data)</h3>
+<p>هي الجانب &ldquo;المعلوماتي&rdquo; الذي يخبرنا <strong>&ldquo;ماذا&rdquo;</strong> يمثل هذا الموقع، وهي تشبه إلى حد كبير الجداول في قواعد البيانات التقليدية (SQL) (سيتم شرح sql في الفقرة الموالية).</p>
+<ul>
+<li>
+<p>تتكون من نصوص، أرقام، أو تواريخ تصف خصائص المعلم المكاني.</p>
+</li>
+<li>
+<p><strong>مثال:</strong> إذا كانت البيانات المكانية هي &ldquo;خط&rdquo; يمثل طريقاً، فإن البيانات الوصفية هي (اسم الطريق، سرعته القصوى، عدد الحارات، ونوع الرصف).</p>
+</li>
+</ul>
+<h3 id="ما-هو-الـ-sql-ببساطة">ما هو الـ SQL؟ (ببساطة)</h3>
+<p>لغة <strong>SQL</strong> (اختصار لـ Structured Query Language) هي اللغة العالمية التي نستخدمها &ldquo;للتحدث&rdquo; مع قواعد البيانات. تخيل أن لديك جدولاً ضخماً يحتوي على آلاف العناوين والأسماء والمعلومات (مثل جدول البيانات الوصفية في GIS)؛ بدلاً من البحث يدوياً عن معلومة معينة، تتيح لك SQL كتابة أمر بسيط باللغة الإنجليزية لطلب ما تريد بدقة.</p>
+<p>فمثلاً، بدلاً من تصفح خريطة المدينة بحثاً عن المباني ثم محاولة إيجاد مباني بشروط معينة يدويا، يمكنك كتابة أمر لـ SQL يقول: <em>&ldquo;أعطني جميع المباني التي عدد طوابقها أكثر من 5 طوابق&rdquo;</em> و سيكون الأمر كالتالي:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> Buildings <span style="color:#66d9ef">WHERE</span> Floors <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>;
+</span></span></code></pre></div><p>حيث SELECT تعطي أمر الإختيار و * تعني إختيار كل أعمدة الجدول و FROM buildings تعني أن يختار من جدول إسمه buildings و WHERE أمر يستخدم لإضافة شرط للأمر مثل هذه االحالة الشرط هو floors &gt; 5 أي إظهار المباني التي عدد طوابقها أكثر من 5 طوابق فقط و بالتالي أي مباني عدد طوابقها يساوي 5 أو أقل لن يظهر في النتيجة النهائية.
+يقوم الحاسوب فوراً بفحص الجدول وإظهار النتائج لك في ثوانٍ. إنها تشبه استخدام &ldquo;مرشحات البحث&rdquo; (Filters) في مواقع التسوق الإلكتروني، لكنها أكثر قوة ومرونة.</p>
+<hr>
+<h3 id="التكامل-بينهما">التكامل بينهما</h3>
+<p>تكمن قوة الـ GIS في الربط التلقائي بين هذين النوعين؛ فكل معلم مكاني يمتلك معرفاً فريداً (ID) يربطه بصف كامل من المعلومات في جدول البيانات الوصفية. هذا الارتباط هو ما يسمح لنا بإجراء استعلامات معقدة مثل: <em>&ldquo;أظهر لي جميع المباني (مكانية) التي بُنيت قبل عام 1990 (وصفية)&rdquo;</em>.</p>
+<hr>
+<h1 id="2--البيانات-المكانية-spatial-data">2- البيانات المكانية (Spatial data):</h1>
+<p>هذا القسم سيعطي طلابك فهماً عميقاً لكيفية تحويل معالم العالم الحقيقي إلى بيانات رقمية، وهو حجر الزاوية في أي مشروع GIS.</p>
+<hr>
+<h3 id="1-نموذج-المتجهات-vector-data-model">1. نموذج المتجهات (Vector Data Model)</h3>
+<h3 id="ملاحظة-سيتم-التطرق-لنموذج-المتجهات-vector-و-نموذج-الراستر-raster-بعمق-في-درس-منفصل">(ملاحظة: سيتم التطرق لنموذج المتجهات vector و نموذج الراستر raster بعمق في درس منفصل)</h3>
+<p>يعتمد هذا النموذج على الهندسة الإقليدية (Geometry). يتم تخزين المعالم كإحداثيات دقيقة ($x, y$). وهو النموذج المفضل لتمثيل المعالم ذات الحدود الواضحة.</p>
+<p>ينقسم هذا النموذج إلى ثلاثة أنواع أساسية:</p>
+<h4 id="أ-النقاط-points">أ. النقاط (Points)</h4>
+<p>تُستخدم لتمثيل المعالم التي ليس لها مساحة أو طول ملموس على مقياس الخريطة.</p>
+<ul>
+<li>
+<p><strong>في البرمجة:</strong> هي عبارة عن زوج من الإحداثيات $[x, y]$.</p>
+</li>
+<li>
+<p><strong>أمثلة من تطبيقات الواقع:</strong></p>
+<ul>
+<li>
+<p>مواقع الصراف الآلي (ATM) في تطبيق بنكي.</p>
+</li>
+<li>
+<p>مواقع أبراج التغطية لشركات الاتصالات.</p>
+</li>
+<li>
+<p>مواقع الحوادث المرورية في بلاغات الشرطة.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ب-الخطوط-lines--polylines">ب. الخطوط (Lines / Polylines)</h4>
+<p>تُستخدم لتمثيل المعالم الطولية التي تربط بين نقطتين أو أكثر.</p>
+<ul>
+<li>
+<p><strong>في البرمجة:</strong> هي مصفوفة من النقاط مرتبة بترتيب معين $[[x1, y1], [x2, y2], &hellip;]$.</p>
+</li>
+<li>
+<p><strong>أمثلة من تطبيقات الواقع:</strong></p>
+<ul>
+<li>
+<p>شبكة الطرق في خرائط Google.</p>
+</li>
+<li>
+<p>مسارات أنابيب النفط والغاز تحت الأرض.</p>
+</li>
+<li>
+<p>مجاري الأنهار والحدود السياسية بين الدول.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ج-المضلعات-polygons">ج. المضلعات (Polygons)</h4>
+<p>تُستخدم لتمثيل المساحات المغلقة التي تبدأ وتنتهي عند نفس النقطة.</p>
+<ul>
+<li>
+<p><strong>أمثلة من تطبيقات الواقع:</strong></p>
+<ul>
+<li>
+<p>حدود الأحياء السكنية أو الغابات.</p>
+</li>
+<li>
+<p>مساحات البحيرات.</p>
+</li>
+<li>
+<p>مخططات الطوابق للمباني الكبرى.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-نموذج-الراستر-raster-data-model">2. نموذج الراستر (Raster Data Model)</h3>
+<p>على عكس المتجهات، لا يهتم الراستر بالنقاط والخطوط، بل يقسم العالم إلى <strong>شبكة من الخلايا (Grid of Cells)</strong> أو البيكسلات. كل خلية تحتوي على قيمة تمثل معلومة معينة في ذلك الموقع.</p>
+<ul>
+<li>
+<p><strong>أمثلة من تطبيقات الواقع:</strong></p>
+<ul>
+<li>
+<p><strong>صور الأقمار الصناعية:</strong> حيث تمثل كل خلية لوناً يعكس طبيعة الأرض.</p>
+</li>
+<li>
+<p><strong>خرائط الارتفاعات الرقمية (DEM):</strong> حيث تمثل قيمة كل خلية ارتفاع المنطقة عن سطح البحر (مثلاً خلية قيمتها 500 تعني ارتفاع 500 متر).</p>
+</li>
+<li>
+<p><strong>خرائط الحرارة:</strong> تمثيل توزيع درجات الحرارة فوق منطقة معينة.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="مقارنة-من-واقع-التطبيقات-العملية">مقارنة من واقع التطبيقات العملية</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>المعلم الجغرافي</strong></th>
+          <th><strong>تمثيل المتجهات (Vector)</strong></th>
+          <th><strong>تمثيل الراستر (Raster)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>بئر ماء</strong></td>
+          <td>نقطة محددة بإحداثيات دقيقة.</td>
+          <td>خلية واحدة داخل شبكة الأرض.</td>
+      </tr>
+      <tr>
+          <td><strong>طريق رئيسي</strong></td>
+          <td>سلسلة من الخطوط المتصلة.</td>
+          <td>مجموعة خلايا متجاورة تشكل مساراً.</td>
+      </tr>
+      <tr>
+          <td><strong>استخدام الأراضي</strong></td>
+          <td>مضلع يحدد حدود الغابة بدقة.</td>
+          <td>خلايا ملونة بالأخضر تمثل مساحة الغابة.</td>
+      </tr>
+      <tr>
+          <td><strong>الدقة</strong></td>
+          <td>عالية جداً في تحديد الحدود.</td>
+          <td>تعتمد على حجم الخلية (Resolution).</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="مثال-تطبيقي-شامل-إدارة-مدينة-ذكية">مثال تطبيقي شامل: إدارة مدينة ذكية</h3>
+<p>تخيل أنك تبني تطبيقاً لإدارة مدينة، ستحتاج لدمج كل ما سبق:</p>
+<ol>
+<li>
+<p>تستخدم <strong>النقاط</strong> لتمثيل أعمدة الإنارة (Vector).</p>
+</li>
+<li>
+<p>تستخدم <strong>الخطوط</strong> لتمثيل شبكة الألياف البصرية للإنترنت (Vector).</p>
+</li>
+<li>
+<p>تستخدم <strong>المضلعات</strong> لتمثيل المناطق الصناعية (Vector).</p>
+</li>
+<li>
+<p>تستخدم <strong>الراستر</strong> لعرض صور جوية للمدينة لمتابعة التوسع العمراني.</p>
+</li>
+</ol>
+<hr>
+<h1 id="3--البيانات-الوصفية-attribute-data">3- البيانات الوصفية (Attribute data):</h1>
+<hr>
+<h2 id="التعمق-في-البيانات-الوصفية-attribute-data">التعمق في البيانات الوصفية (Attribute Data)</h2>
+<p>إذا كانت البيانات المكانية تخبرنا بمكان المعلم على الخريطة، فإن <strong>البيانات الوصفية</strong> هي &ldquo;البطاقة الشخصية&rdquo; لهذا المعلم. هي المعلومات النصية، الرقمية، والنوعية التي تصف خصائص الظواهر الجغرافية وتجيب على سؤال: <strong>ما هي صفات هذا المكان؟</strong></p>
+<p>في نظم المعلومات الجغرافية، تُنظم هذه البيانات في جداول تشبه جداول &ldquo;الإكسل&rdquo; (Excel)، حيث يرتبط كل صف في الجدول بمعلم واحد موجود على الخريطة.</p>
+<h3 id="1-كيف-تنظم-البيانات-الوصفية">1. كيف تُنظم البيانات الوصفية؟</h3>
+<p>لفهم البيانات الوصفية، يجب التعرف على مكونات <strong>جدول البيانات (Attribute Table)</strong>:</p>
+<ul>
+<li>
+<p><strong>السجلات (Records/Rows):</strong> كل &ldquo;صف&rdquo; يمثل معلماً جغرافياً واحداً (مثلاً: مدينة واحدة، أو غابة واحدة).</p>
+</li>
+<li>
+<p><strong>الحقول (Fields/Columns):</strong> كل &ldquo;عمود&rdquo; يمثل خاصية معينة نجمعها عن هذه المعالم (مثلاً: اسم المدينة، عدد السكان، المناخ).</p>
+</li>
+<li>
+<p><strong>القيم (Values):</strong> هي المعلومة الحقيقية الموجودة داخل الخلية (مثلاً: &ldquo;الجزائر العاصمة&rdquo;، &ldquo;3 مليون&rdquo;، &ldquo;متوسطي&rdquo;).</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-أنواع-المعلومات-الوصفية-أمثلة-جغرافية">2. أنواع المعلومات الوصفية (أمثلة جغرافية)</h3>
+<p>لا تقتصر البيانات الوصفية على الأسماء فقط، بل تشمل أنواعاً مختلفة نستخدمها في التحليل الجغرافي:</p>
+<ol>
+<li>
+<p><strong>بيانات نوعية (Nominal):</strong> تستخدم للتصنيف دون مفاضلة رقمية.</p>
+<ul>
+<li><em>مثال:</em> نوع التربة (طينية، رملية)، نوع الغطاء النباتي، أو أسماء الشوارع.</li>
+</ul>
+</li>
+<li>
+<p><strong>بيانات كمية (Quantitative):</strong> أرقام تعبر عن مقادير يمكن حسابها.</p>
+<ul>
+<li><em>مثال:</em> الارتفاع عن سطح البحر، كمية التساقط السنوي، أو مساحة المحصول الزراعي.</li>
+</ul>
+</li>
+<li>
+<p><strong>بيانات رتبية (Ordinal):</strong> قيم توضح ترتيباً معيناً.</p>
+<ul>
+<li><em>مثال:</em> درجة التلوث (منخفض، متوسط، مرتفع) أو رتبة الطريق (رئيسي، فرعي، زقاق).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3-أمثلة-من-التطبيقات-الجغرافية-الواقعية">3. أمثلة من التطبيقات الجغرافية الواقعية</h3>
+<h4 id="أ-في-دراسات-السكان-demographics">أ. في دراسات السكان (Demographics)</h4>
+<p>عندما يرسم الجغرافي خريطة لتوزيع السكان، تكون البيانات المكانية هي <strong>حدود الولايات</strong> (مضلعات)، بينما تكون البيانات الوصفية المرتبطة بها هي:</p>
+<ul>
+<li>
+<p>اسم الولاية.</p>
+</li>
+<li>
+<p>إجمالي عدد السكان.</p>
+</li>
+<li>
+<p>نسبة البطالة.</p>
+</li>
+<li>
+<p>الكثافة السكانية لكل $km^2$.</p>
+</li>
+</ul>
+<h4 id="ب-في-إدارة-الموارد-المائية">ب. في إدارة الموارد المائية</h4>
+<p>تكون البيانات المكانية هي <strong>مواقع الآبار</strong> (نقاط)، وتكون البيانات الوصفية التابعة لها:</p>
+<ul>
+<li>
+<p>عمق مستوى الماء.</p>
+</li>
+<li>
+<p>درجة ملوحة المياه.</p>
+</li>
+<li>
+<p>سنة حفر البئر.</p>
+</li>
+<li>
+<p>الحالة التشغيلية (يعمل / معطل).</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-الربط-بين-الخريطة-والجدول-linkage">4. الربط بين الخريطة والجدول (Linkage)</h3>
+<p>الميزة السحرية في الـ GIS هي <strong>الربط ثنائي الاتجاه</strong>:</p>
+<ul>
+<li>
+<p>إذا اخترت (Select) مدينة على الخريطة، سيقوم البرنامج بتظليل &ldquo;الصف&rdquo; الخاص بها في الجدول لتشاهد بياناتها.</p>
+</li>
+<li>
+<p>إذا اخترت &ldquo;صفاً&rdquo; في الجدول (مثلاً المدن التي يتجاوز سكانها مليون نسمة)، سيقوم البرنامج بتظليل &ldquo;مواقعها&rdquo; فوراً على الخريطة.</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>خلاصة:</strong> البيانات المكانية هي &ldquo;الجسم&rdquo; والبيانات الوصفية هي &ldquo;الروح&rdquo;. لا يمكننا إجراء تحليل مكاني حقيقي (مثل معرفة المناطق الأكثر عرضة للتصحر) إلا بوجود بيانات وصفية دقيقة ومحدثة.</p>
+</blockquote>
+<hr>
+<h1 id="المطلوب">المطلوب:</h1>
+<h4 id="قبل-الإطلاع-على-محتوى-الروابط-تذكر-أن-الهدف-من-كل-هذه-الدراسة-النظرية-هي-معرفة-ماهية-هذه-المفاهيم-النظرية-و-أخذ-نظرة-جيدة-عليها-لاحقا-في-الربع-الثاني-سنبدأ-بالعمل-بشكل-تطبيقي-على-qgis-حينها-ستصبح-كل-هذه-المفاهيم-النظرية-ذات-معنى">قبل الإطلاع على محتوى الروابط: تذكر أن الهدف من كل هذه الدراسة النظرية هي معرفة ماهية هذه المفاهيم النظرية و أخذ نظرة جيدة عليها، لاحقا في الربع الثاني سنبدأ بالعمل بشكل تطبيقي على QGIS حينها ستصبح كل هذه المفاهيم النظرية ذات معنى.</h4>
+<h3 id="1--إطلع-على-محتوى-تعريف-البيانات-الوصفية-attribute-data-في-البيانات-المكانية-مع--رضا-بدر">1- إطلع على محتوى <a href="https://arabicgis.com/attribute-data/">تعريف البيانات الوصفية (Attribute Data) في البيانات المكانية مع / رضا بدر</a></h3>
+<h3 id="2--إطلع-على-محتوى-what-is-spatial-data-a-beginners-guide">2- إطلع على محتوى <a href="https://www.youtube.com/watch?v=QMmk49KTCxk">What Is Spatial Data? A Beginner’s Guide</a></h3>
+<h3 id="3--إطلع-على-محتوى-gis-module-2-spatial-data-fundamentals-إلى-غاية-الفصل-23-ﻷن-الفصل-24-يتحدث-بشكل-معمق-عن-vector-و-raster-و-هذا-موضوع-سنأخذه-بعمق-في-الدرس-القادم">3- إطلع على محتوى <a href="https://storymaps.arcgis.com/stories/ad6624ab35b74a9c8bb52c6d39265fac">GIS Module 2: Spatial Data Fundamentals</a> إلى غاية الفصل 2.3 ﻷن الفصل 2.4 يتحدث بشكل معمق عن vector و raster و هذا موضوع سنأخذه بعمق في الدرس القادم</h3>
+<h3 id="4--إطلع-على-محتوى-attribute-data---definitions--faqs---atlas-حول-البيانات-الوصفية">4- إطلع على محتوى <a href="https://atlas.co/glossary/attribute-data/">Attribute Data - Definitions &amp; FAQs - Atlas</a> حول البيانات الوصفية</h3>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/gis"
+      >GIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/qgis"
+      >QGIS</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7"
+      >جغرافيا</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://example.org/tags/%D8%AA%D8%B9%D9%84%D9%85"
+      >تعلم</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://example.org/posts/vector_raster_data/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>1-3/ البيانات النقطية و البيانات المتجهة/الإتجاهية</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://example.org/posts/general_gis_basics/"
+      ><span>1- تعريف GIS</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://example.org/">دورة لتعلم أساسيات GIS</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>
